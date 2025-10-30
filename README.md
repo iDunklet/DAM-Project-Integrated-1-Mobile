@@ -1,2 +1,2 @@
-# DAM-Project-Intermodular-1-Mobile
+# DAM-Project-Integrated-1-Mobile
 This Repo is where the game is.
