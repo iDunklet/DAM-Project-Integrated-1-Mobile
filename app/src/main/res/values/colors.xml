@@ -2,12 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="Azulclaro">#A9D8FF</color>
-    <color name="Naranja">#FFA629</color>
-    <color name="Azuloscuro">#A9D8FF</color>
-    <color name="Amarillo">#FFD84D</color>
-    <color name="Azulmedio">#4AA3FF</color>
-    <color name="Grisoscuro">#555555</color>
+    <color name="azulClaro">#A9D8FF</color>
+    <color name="naranja">#FFA629</color>
+    <color name="azulOscuro">#4AA3FF</color>
+    <color name="amarillo">#FFD84D</color>
+    <color name="azulMedio">#A9D8FF</color>
+    <color name="grisOscuro">#555555</color>
     <color name="colorTextbox">#CBE5FF</color>
     <color name="fondoPantalla">#5DBBFE</color>
+    <color name="verde">#70B935</color>
+    <color name="rojo">#F15E38</color>
+
 </resources>

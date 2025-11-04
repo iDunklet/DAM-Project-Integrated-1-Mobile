@@ -5,15 +5,60 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondoPantalla"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        android:columnCount="2"
+        android:rowCount="1">
+
+        <ImageView
+            android:layout_width="700dp"
+            android:layout_height="match_parent"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="start"
+            android:src="@drawable/logoApp" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:columnCount="1"
+            android:rowCount="2"
+            android:padding="100dp"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:background="@drawable/boton_verde"
+                android:text="JUGAR"
+                android:textSize="66dp"
+                app:backgroundTint="@null"/>
+
+            <Button
+                android:id="@+id/btnExit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:background="@drawable/boton_rojo"
+                android:text="SALIR"
+                android:textSize="50dp"
+                app:backgroundTint="@null"/>
+        </GridLayout>
+
+
+    </GridLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
