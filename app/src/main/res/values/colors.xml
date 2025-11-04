@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Azulclaro">#A9D8FF</color>
+    <color name="Naranja">#FFA629</color>
+    <color name="Azuloscuro">#A9D8FF</color>
+    <color name="Amarillo">#FFD84D</color>
+    <color name="Azulmedio">#4AA3FF</color>
+    <color name="Grisoscuro">#555555</color>
+    <color name="colorTextbox">#CBE5FF</color>
+    <color name="fondoPantalla">#5DBBFE</color>
 </resources>
