@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fondoPantalla"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"  >
+
+        <ImageButton
+            android:id="@+id/IconBack"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:src="@drawable/flecha_izquierda" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/labelCuentaAtras"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:text="99"
+            android:textSize="60dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text_radius"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="8dp"> <TextView
+            android:id="@+id/labelNumRonda"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="60dp"
+            android:gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textSize="60dp"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/labelNumTotalRondas"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="60dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="900dp"
+        android:layout_height="180dp"
+        android:background="@drawable/edit_text_radius"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/labelTextoPregunta1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="pregunta"
+            android:textSize="50dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:id="@+id/labelTextoPregunta2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="five"
+            android:textSize="50dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="1100dp"
+        android:layout_height="300dp"
+        android:background="@drawable/edit_text_radius"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btnBox1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="1"
+            android:textSize="100dp"
+            android:gravity="center"
+            android:background="@color/naranja"
+            app:backgroundTint="@null"
+            />
+
+        <Button
+            android:id="@+id/btnBox2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="2"
+            android:textSize="100dp"
+            android:gravity="center"
+            android:background="@color/verde"
+            app:backgroundTint="@null"
+            />
+
+        <Button
+            android:id="@+id/btnBox3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="3"
+            android:textSize="100dp"
+            android:gravity="center"
+            android:background="@color/rojo"
+            app:backgroundTint="@null"
+            />
+
+        <Button
+            android:id="@+id/btnBox4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="4"
+            android:textSize="100dp"
+            android:gravity="center"
+            android:background="@color/azulOscuro"
+            app:backgroundTint="@null"
+            />
+
+        <Button
+            android:id="@+id/btnBox5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="5"
+            android:textSize="100dp"
+            android:gravity="center"
+            android:background="@color/amarillo"
+            app:backgroundTint="@null"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonRegisterAceptar"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:background="@drawable/boton_verde"
+        app:backgroundTint="@null"
+        android:text="ACEPTAR"
+        android:textSize="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>
