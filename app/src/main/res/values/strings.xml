@@ -3,4 +3,11 @@
     <string name="play">JUGAR</string>
     <string name="exit">SALIR</string>
     <string name="logo">Colorful Shapes logo</string>
+    <string name="little_shapes">Imagen de las formas felices</string>
+    <string name="txtResultados">RESULTADOS</string>
+    <string name="txtNombre">"Nombre: "</string>
+    <string name="txtAciertos">"Aciertos: "</string>
+    <string name="txtErrores">"Errores: "</string>
+    <string name="txtTiempo">"Tiempo: "</string>
+    <string name="playAgain">Volver a\nJUGAR</string>
 </resources>
