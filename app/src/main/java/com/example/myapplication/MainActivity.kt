@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val btnStart = findViewById<Button>(R.id.btnStart)
         val btnExit = findViewById<Button>(R.id.btnExit)
         btnStart.setOnClickListener {
-            startActivity(Intent(this, ResgisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
         btnExit.setOnClickListener {
             finishAffinity()
