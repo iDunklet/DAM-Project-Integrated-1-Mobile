@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="0"
+            android:layout_marginStart="75dp"
             android:text="@string/txtNombre"
             android:textColor="@color/white"
             android:textSize="75sp" />
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_row="2"
             android:layout_column="0"
+            android:layout_marginStart="75dp"
             android:text="@string/txtAciertos"
             android:textColor="@color/white"
             android:textSize="75sp" />
@@ -49,6 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_row="3"
             android:layout_column="0"
+            android:layout_marginStart="75dp"
             android:text="@string/txtErrores"
             android:textColor="@color/white"
             android:textSize="75sp" />
@@ -58,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_row="4"
             android:layout_column="0"
+            android:layout_marginStart="75dp"
             android:text="@string/txtTiempo"
             android:textColor="@color/white"
             android:textSize="75sp" />
@@ -67,7 +71,7 @@
             android:layout_height="200dp"
             android:layout_row="5"
             android:layout_column="0"
-            android:layout_gravity="start"
+            android:layout_gravity="start|bottom"
             android:contentDescription="@string/little_shapes"
             android:src="@drawable/little_shapes" />
 
