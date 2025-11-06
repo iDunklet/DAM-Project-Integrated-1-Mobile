@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/fondoPantalla">
+
+    <TextView
+        android:id="@+id/labelInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="INICIO"
+        android:textSize="100dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        >
+
+        <TextView
+            android:id="@+id/labelNombre"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="250dp"
+            android:text="NOMBRE:"
+            android:textSize="45dp" />
+
+        <EditText
+            android:id="@+id/TextboxNombre"
+            android:layout_width="508dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="40dp"
+            android:textSize="35dp"
+            android:background="@drawable/edit_text_radius"
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        >
+
+        <TextView
+            android:id="@+id/labelEdad"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="350dp"
+            android:layout_marginTop="20dp"
+            android:text="EDAD:"
+            android:textSize="45dp" />
+
+        <EditText
+            android:id="@+id/TextboxEdad"
+            android:layout_width="220dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_radius"
+            android:textSize="35dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        >
+
+        <TextView
+            android:id="@+id/labelRondas"
+            android:layout_width="238dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="350dp"
+            android:layout_marginTop="20dp"
+            android:text="RONDAS:"
+            android:textSize="45dp" />
+
+        <Button
+            android:id="@+id/buttonRondas5"
+            android:layout_width="130dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edit_text_radius"
+            android:text="5"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            app:backgroundTint="@null"
+            />
+
+        <Button
+            android:id="@+id/buttonRondas10"
+            android:layout_width="130dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edit_text_radius"
+            android:text="10"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            app:backgroundTint="@null"
+            />
+        <Button
+            android:id="@+id/buttonRondas15"
+            android:layout_width="130dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/edit_text_radius"
+            android:text="15"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            app:backgroundTint="@null"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/labelNivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="DIFICULTAD"
+        android:textSize="50dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/buttonNivel1"
+            android:layout_width="180dp"
+            android:layout_height="68dp"
+            android:background="@drawable/edit_text_radius"
+            app:backgroundTint="@null"
+            android:layout_marginRight="20dp"
+            android:text="Nivel 1"
+            android:textSize="35dp"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:id="@+id/buttonNivel2"
+            android:layout_width="180dp"
+            android:layout_height="68dp"
+            android:background="@drawable/edit_text_radius"
+            app:backgroundTint="@null"
+            android:layout_marginLeft="20dp"
+            android:text="Nivel 2"
+            android:textSize="35dp"
+            android:textColor="@color/black"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonRegisterAceptar"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:background="@drawable/boton_verde"
+        app:backgroundTint="@null"
+        android:text="ACEPTAR"
+        android:textSize="35dp"
+        android:textColor="@color/white"
+        />
+
+
+
+
+
+</LinearLayout>
