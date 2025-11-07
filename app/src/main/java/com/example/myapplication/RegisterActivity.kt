@@ -93,15 +93,15 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
-    
+
     private fun handleRoundSelection(boton: Button, rondas: Int) {
         MetodosUniversal.setSelectionStyle(
             botonPresionado = boton,
             valor = rondas,
             botonesGrupo = botonesRondas,
             targetVariable = TARGET_ROUNDS, // 1
-            onUpdateData = ::updateDataVariables // Referencia al método de actualización local
-                                          )
+            onUpdateData = ::updateDataVariables // Referencia al metodo de actualización local
+        )
     }
 
     private fun handleLevelSelection(boton: Button, nivel: Int) {
@@ -110,8 +110,8 @@ class RegisterActivity : AppCompatActivity() {
             valor = nivel,
             botonesGrupo = botonesNivel,
             targetVariable = TARGET_DIFFICULTY, // 2
-            onUpdateData = ::updateDataVariables // Referencia al método de actualización local
-                                          )
+            onUpdateData = ::updateDataVariables // Referencia al metodo de actualización local
+        )
     }
 
 
@@ -138,7 +138,8 @@ class RegisterActivity : AppCompatActivity() {
             return false
         }
         if (numeroRondas == 0) {
-            Toast.makeText(this, "Debes seleccionar el número de rondas.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Debes seleccionar el número de rondas.", Toast.LENGTH_SHORT)
+                .show()
             return false
         }
         if (nivelDificultad == 0) {
