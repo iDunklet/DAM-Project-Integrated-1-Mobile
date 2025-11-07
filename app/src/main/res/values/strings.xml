@@ -5,7 +5,7 @@
     <string name="logo">Colorful Shapes logo</string>
     <string name="little_shapes">Imagen de las formas felices</string>
     <string name="txtResultados">RESULTADOS</string>
-    <string name="txtNombre">"Nombre: "</string>
+    <string name="txtNombre">"Jugador: "</string>
     <string name="txtAciertos">"Aciertos: "</string>
     <string name="txtErrores">"Errores: "</string>
     <string name="txtTiempo">"Tiempo: "</string>

@@ -12,8 +12,7 @@ object MetodosUniversal {
         botonesGrupo: List<Button>,
         targetVariable: Int,
         onUpdateData: (target: Int, value: Int) -> Unit
-                         )
-    {
+    ) {
 
         resetButtonStyles(botonesGrupo, DRAWABLE_NORMAL)
         highlightButton(botonPresionado, DRAWABLE_SELECCIONADO)
@@ -26,6 +25,7 @@ object MetodosUniversal {
             boton.setBackgroundResource(normalStyle)
         }
     }
+
     private fun highlightButton(button: Button, selectedStyle: Int) {
         button.setBackgroundResource(selectedStyle)
     }

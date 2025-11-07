@@ -88,7 +88,7 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
-    
+
     private fun handleRoundSelection(boton: Button, rondas: Int) {
         MetodosUniversal.setSelectionStyle(
             botonPresionado = boton,
@@ -133,7 +133,8 @@ class RegisterActivity : AppCompatActivity() {
             return false
         }
         if (numeroRondas == 0) {
-            Toast.makeText(this, "Debes seleccionar el número de rondas.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Debes seleccionar el número de rondas.", Toast.LENGTH_SHORT)
+                .show()
             return false
         }
         if (nivelDificultad == 0) {
