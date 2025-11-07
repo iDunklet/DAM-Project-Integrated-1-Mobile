@@ -1,5 +1,6 @@
 package com.example.myapplication
+import java.io.Serializable
 
-import android.R
 
-class Jugador (val nombre: String, val edad: Int, val rondas: Int, val nivel: Int){}
+
+class Jugador (val nombre: String, val edad: Int, val rondas: Int, val nivel: Int) : Serializable

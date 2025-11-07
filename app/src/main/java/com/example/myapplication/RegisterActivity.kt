@@ -15,9 +15,6 @@ class RegisterActivity : AppCompatActivity() {
 
     private var numeroRondas: Int = 0
     private var nivelDificultad: Int = 0
-
-    // Constantes para identificar el tipo de variable que se está actualizando
-    // Esto coincide con los valores 1 y 2 usados en MetodosUniversal
     private val TARGET_ROUNDS = 1
     private val TARGET_DIFFICULTY = 2
 
@@ -76,18 +73,16 @@ class RegisterActivity : AppCompatActivity() {
 
         btnAceptar.setOnClickListener {
             if (validateInputs(newPlayerName, newPlayerAge)) {
-                // Asegúrate de que tienes una clase Jugador definida
-                // val newPlayer = Jugador(
-                //     nombre = newPlayerName.text.toString(),
-                //     edad = newPlayerAge.text.toString().toInt(),
-                //     rondas = numeroRondas,
-                //     nivel = nivelDificultad
-                // )
+
+                 val newPlayer = Jugador(
+                     nombre = newPlayerName.text.toString(),
+                     edad = newPlayerAge.text.toString().toInt(),
+                     rondas = numeroRondas,
+                     nivel = nivelDificultad
+                 )
 
                 val intent = Intent(this, GameActivity::class.java)
-                // Pasa los datos a GameActivity si es necesario
-                intent.putExtra("ROUNDS", numeroRondas)
-                intent.putExtra("DIFFICULTY", nivelDificultad)
+                intent.putExtra("JUGADOR", newPlayer)
                 startActivity(intent)
 
             }
@@ -99,8 +94,8 @@ class RegisterActivity : AppCompatActivity() {
             botonPresionado = boton,
             valor = rondas,
             botonesGrupo = botonesRondas,
-            targetVariable = TARGET_ROUNDS, // 1
-            onUpdateData = ::updateDataVariables // Referencia al método de actualización local
+            targetVariable = TARGET_ROUNDS,
+            onUpdateData = ::updateDataVariables
                                           )
     }
 
@@ -109,8 +104,8 @@ class RegisterActivity : AppCompatActivity() {
             botonPresionado = boton,
             valor = nivel,
             botonesGrupo = botonesNivel,
-            targetVariable = TARGET_DIFFICULTY, // 2
-            onUpdateData = ::updateDataVariables // Referencia al método de actualización local
+            targetVariable = TARGET_DIFFICULTY,
+            onUpdateData = ::updateDataVariables
                                           )
     }
 
@@ -125,7 +120,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    // Validación de Inputs (sin cambios, excepto que ya tiene las variables actualizadas)
+
     private fun validateInputs(nameEt: EditText, ageEt: EditText): Boolean {
         if (nameEt.text.isNullOrBlank()) {
             nameEt.error = "El nombre es obligatorio."
