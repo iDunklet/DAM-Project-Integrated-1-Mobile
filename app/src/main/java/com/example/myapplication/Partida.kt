@@ -1,3 +1,4 @@
+import java.io.Serializable
 import java.util.Date
 
 class Partida(
@@ -8,7 +9,7 @@ class Partida(
     var aciertos: Int = 0,
     val fechaHoraInicio: Date = Date(),
     var fechaHoraFin: Date? = null
-) {
+) : Serializable {
     fun registrarAcierto() {
         if (aciertos < rondas) aciertos++
     }
