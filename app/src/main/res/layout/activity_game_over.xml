@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnCount="2"
-        android:padding="30dp"
+        android:padding="40dp"
         android:rowCount="6">
 
         <TextView
@@ -22,49 +22,112 @@
             android:layout_row="0"
             android:layout_column="0"
             android:text="@string/txtResultados"
-            android:textColor="@color/blanco"
-            android:textSize="100sp"
+            android:textColor="@color/white"
+            android:textSize="80sp"
             android:textStyle="bold" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="0"
-            android:layout_marginStart="75dp"
-            android:text="@string/txtNombre"
-            android:textColor="@color/blanco"
-            android:textSize="75sp" />
+            android:layout_marginStart="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtNombre"
+                android:textColor="@color/white"
+                android:textSize="75sp" />
+
+            <TextView
+                android:id="@+id/labelJugador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nomJugador"
+                android:textColor="@color/white"
+                android:textSize="75sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"
             android:layout_column="0"
-            android:layout_marginStart="75dp"
-            android:text="@string/txtAciertos"
-            android:textColor="@color/blanco"
-            android:textSize="75sp" />
+            android:layout_marginStart="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtAciertos"
+                android:textColor="@color/white"
+                android:textSize="75sp" />
+
+            <TextView
+                android:id="@+id/labelAciertos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="75sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="3"
             android:layout_column="0"
-            android:layout_marginStart="75dp"
-            android:text="@string/txtErrores"
-            android:textColor="@color/blanco"
-            android:textSize="75sp" />
+            android:layout_marginStart="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtErrores"
+                android:textColor="@color/white"
+                android:textSize="75sp" />
+
+            <TextView
+                android:id="@+id/labelErrores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="75sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="4"
             android:layout_column="0"
-            android:layout_marginStart="75dp"
+            android:layout_marginStart="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/txtTiempo"
             android:textColor="@color/blanco"
             android:textSize="75sp" />
+
+            <TextView
+                android:id="@+id/labelTiempo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="75sp" />
+
+        </LinearLayout>
 
         <ImageView
             android:layout_width="250dp"
@@ -79,13 +142,13 @@
             android:id="@+id/btnExit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="3"
+            android:layout_row="4"
             android:layout_column="1"
-            android:layout_gravity="end"
+            android:layout_gravity="end|top"
             android:background="@drawable/boton_rojo"
             android:text="@string/exit"
             android:textSize="50sp"
-            app:backgroundTint="@null"/>
+            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/btnStart"
@@ -93,11 +156,11 @@
             android:layout_height="wrap_content"
             android:layout_row="5"
             android:layout_column="1"
-            android:layout_gravity="end"
+            android:layout_gravity="end|bottom"
             android:background="@drawable/boton_verde"
             android:text="@string/playAgain"
             android:textSize="66sp"
-            app:backgroundTint="@null"/>
+            app:backgroundTint="@null" />
 
     </GridLayout>
 

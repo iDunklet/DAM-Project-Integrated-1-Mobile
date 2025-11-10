@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import Partida
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,8 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import java.util.Date
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -74,21 +74,33 @@ class RegisterActivity : AppCompatActivity() {
         btnAceptar.setOnClickListener {
             if (validateInputs(newPlayerName, newPlayerAge)) {
 
-                 val newPlayer = Jugador(
+                 val nuevoJugador = Jugador(
+                     idJugador = 4,
                      nombre = newPlayerName.text.toString(),
-                     edad = newPlayerAge.text.toString().toInt(),
-                     rondas = numeroRondas,
-                     nivel = nivelDificultad
+                     edad = newPlayerAge.text.toString().toInt()
                  )
 
+                val nuevaPartida = Partida(
+                    idPartida = 4,
+                    idJugador = 4,
+                    rondas = numeroRondas,
+                    dificultad = nivelDificultad,
+                    aciertos = 0,
+                    fechaHoraInicio = Date(),
+                    fechaHoraFin = null
+                )
+
+
+
                 val intent = Intent(this, GameActivity::class.java)
-                intent.putExtra("JUGADOR", newPlayer)
+                intent.putExtra("JUGADOR", nuevoJugador)
+                intent.putExtra("PARTIDA", nuevaPartida)
                 startActivity(intent)
 
             }
         }
     }
-    
+
     private fun handleRoundSelection(boton: Button, rondas: Int) {
         MetodosUniversal.setSelectionStyle(
             botonPresionado = boton,
@@ -133,7 +145,8 @@ class RegisterActivity : AppCompatActivity() {
             return false
         }
         if (numeroRondas == 0) {
-            Toast.makeText(this, "Debes seleccionar el número de rondas.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Debes seleccionar el número de rondas.", Toast.LENGTH_SHORT)
+                .show()
             return false
         }
         if (nivelDificultad == 0) {
