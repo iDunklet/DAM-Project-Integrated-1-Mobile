@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,9 +18,10 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_vertical"
-            android:scaleType="fitCenter"
             android:background="@null"
-            android:src="@drawable/flecha_izquierda" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/flecha_izquierda"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <View
             android:layout_width="0dp"
@@ -79,15 +81,16 @@
         android:layout_gravity="center"
         android:orientation="vertical"
         >
+
         <TextView
             android:id="@+id/labelTextoPregunta1"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:hint="pregunta"
-            android:textSize="50dp"
+            android:layout_height="157dp"
             android:gravity="center"
+            android:hint="pregunta"
             android:textAlignment="center"
-            />
+            android:textSize="50dp" />
+     <!--
         <TextView
             android:id="@+id/labelTextoPregunta2"
             android:layout_width="match_parent"
@@ -97,13 +100,11 @@
             android:gravity="center"
             android:textAlignment="center"
             />
-
+-->
 
     </LinearLayout>
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="1100dp"
         android:layout_height="300dp"
         android:background="@drawable/edit_text_radius"
@@ -117,24 +118,26 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="1"
-            android:textSize="100dp"
-            android:gravity="center"
             android:background="@color/naranja"
-            app:backgroundTint="@null"
-            />
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:text="1"
+            android:textColor="#616161"
+            android:textSize="100sp"
+            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/btnBox2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="2"
-            android:textSize="100dp"
-            android:gravity="center"
             android:background="@color/verde"
-            app:backgroundTint="@null"
-            />
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:text="2"
+            android:textColor="#006064"
+            android:textSize="100sp"
+            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/btnBox3"
@@ -142,8 +145,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="3"
-            android:textSize="100dp"
+            android:textSize="100sp"
             android:gravity="center"
+            android:scaleType="centerInside"
             android:background="@color/rojo"
             app:backgroundTint="@null"
             />
@@ -153,24 +157,26 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="4"
-            android:textSize="100dp"
-            android:gravity="center"
             android:background="@color/azulOscuro"
-            app:backgroundTint="@null"
-            />
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:text="4"
+            android:textColor="#5E35B1"
+            android:textSize="100sp"
+            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/btnBox5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="5"
-            android:textSize="100dp"
-            android:gravity="center"
             android:background="@color/amarillo"
-            app:backgroundTint="@null"
-            />
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:text="5"
+            android:textColor="#607D8B"
+            android:textSize="100sp"
+            app:backgroundTint="@null" />
 
     </LinearLayout>
 
@@ -184,7 +190,7 @@
         android:textSize="35dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/blanco"
         />
 
 </LinearLayout>

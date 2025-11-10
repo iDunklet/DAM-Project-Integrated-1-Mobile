@@ -22,7 +22,7 @@
             android:layout_row="0"
             android:layout_column="0"
             android:text="@string/txtResultados"
-            android:textColor="@color/white"
+            android:textColor="@color/blanco"
             android:textSize="100sp"
             android:textStyle="bold" />
 
@@ -33,7 +33,7 @@
             android:layout_column="0"
             android:layout_marginStart="75dp"
             android:text="@string/txtNombre"
-            android:textColor="@color/white"
+            android:textColor="@color/blanco"
             android:textSize="75sp" />
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_column="0"
             android:layout_marginStart="75dp"
             android:text="@string/txtAciertos"
-            android:textColor="@color/white"
+            android:textColor="@color/blanco"
             android:textSize="75sp" />
 
         <TextView
@@ -53,7 +53,7 @@
             android:layout_column="0"
             android:layout_marginStart="75dp"
             android:text="@string/txtErrores"
-            android:textColor="@color/white"
+            android:textColor="@color/blanco"
             android:textSize="75sp" />
 
         <TextView
@@ -63,7 +63,7 @@
             android:layout_column="0"
             android:layout_marginStart="75dp"
             android:text="@string/txtTiempo"
-            android:textColor="@color/white"
+            android:textColor="@color/blanco"
             android:textSize="75sp" />
 
         <ImageView
