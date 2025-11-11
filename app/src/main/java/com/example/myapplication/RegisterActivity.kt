@@ -92,7 +92,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
 
-                val intent = Intent(this, GameActivity_old::class.java)
+                val intent = Intent(this, GameActivity::class.java)
                 intent.putExtra("JUGADOR", nuevoJugador)
                 intent.putExtra("PARTIDA", nuevaPartida)
                 startActivity(intent)

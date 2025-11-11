@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat
 
 import android.annotation.SuppressLint
 
-class GameActivity_old : AppCompatActivity() {
+class GameActivity : AppCompatActivity() {
 
     private var jugadorActual: Jugador? = null
     private var partidaActual: Partida? = null
