@@ -10,4 +10,12 @@
     <string name="txtErrores">"Errores: "</string>
     <string name="txtTiempo">"Tiempo: "</string>
     <string name="playAgain">Volver a\nJUGAR</string>
+    <string name="aceptar">ACEPTAR</string>
+    <string name="nivel_2">Nivel 2</string>
+    <string name="nivel_1">Nivel 1</string>
+    <string name="dificultad">DIFICULTAD</string>
+    <string name="rondas">RONDAS:</string>
+    <string name="edad">EDAD:</string>
+    <string name="nombre">NOMBRE:</string>
+    <string name="inicio">INICIO</string>
 </resources>
