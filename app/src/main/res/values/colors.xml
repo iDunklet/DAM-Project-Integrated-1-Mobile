@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="negro">#FF000000</color>
+    <color name="blanco">#FFFFFFFF</color>
     <color name="azulClaro">#A9D8FF</color>
     <color name="naranja">#FFA629</color>
     <color name="azulOscuro">#4AA3FF</color>
@@ -12,5 +12,18 @@
     <color name="fondoPantalla">#2399CF</color>
     <color name="verde">#57A418</color>
     <color name="rojo">#F15E38</color>
+
+
+    <!-- respuestas preguntas clase color -->
+    <color name="red">#E53935</color>
+    <color name="blue">#1E88E5</color>
+    <color name="green">#43A047</color>
+    <color name="yellow">#FDD835</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="purple">#8E24AA</color>
+    <color name="orange">#FB8C00</color>
+    <color name="brown">#6D4C41</color>
+    <color name="gray">#9E9E9E</color>
 
 </resources>
