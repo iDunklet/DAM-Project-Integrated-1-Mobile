@@ -1,3 +1,6 @@
+package com.example.myapplication
+
+import Partida
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,15 +11,13 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.myapplication.Jugador
-import com.example.myapplication.PreguntaJuego
-import com.example.myapplication.R
-import com.example.myapplication.getRandomQuestions
+
 import android.annotation.SuppressLint
 
-class GameActivity : AppCompatActivity() {
+class GameActivity_old : AppCompatActivity() {
 
     private var jugadorActual: Jugador? = null
+    private var partidaActual: Partida? = null
     private lateinit var gameQuestions: List<PreguntaJuego>
     private var currentQuestionIndex: Int = 0
     private var score: Int = 0
@@ -52,10 +53,14 @@ class GameActivity : AppCompatActivity() {
             @Suppress("DEPRECATION", "UNCHECKED_CAST")
             val serializableObject = receivedIntent.getSerializableExtra("JUGADOR")
             jugadorActual = serializableObject as? Jugador
+            @Suppress("DEPRECATION", "UNCHECKED_CAST")
+            val serializableObject2 = receivedIntent.getSerializableExtra("PARTIDA")
+            partidaActual = serializableObject2 as? Partida
         } catch (e: Exception) {
             reportFatalError("Error reading intent extras", e)
             return
         }
+
 
         // Initialize views dentro de try/catch para capturar findViewById nulls
         try {
@@ -74,7 +79,7 @@ class GameActivity : AppCompatActivity() {
 
         // Obtener preguntas; defensivamente comprobamos tamaño
         try {
-            val numRondasSeleccionadas = jugadorActual!!.rondas
+            val numRondasSeleccionadas = partidaActual!!.rondas
             gameQuestions = getRandomQuestions(numRondasSeleccionadas)
             if (gameQuestions.isEmpty()) {
                 Toast.makeText(this, "No hay preguntas disponibles.", Toast.LENGTH_LONG).show()

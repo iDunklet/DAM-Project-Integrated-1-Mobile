@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"  >
+        android:layout_marginTop="10dp"  >
 
         <ImageButton
             android:id="@+id/IconBack"
@@ -31,13 +31,12 @@
         <TextView
             android:id="@+id/labelCuentaAtras"
             android:layout_width="140dp"
-            android:layout_height="100dp"
+            android:layout_height="69dp"
             android:layout_gravity="center_vertical"
-            android:text="99"
-            android:textSize="60dp"
-            android:gravity="center"
             android:background="@drawable/edit_text_radius"
-            />
+            android:gravity="center"
+            android:text="99"
+            android:textSize="30dp" />
 
         <View
             android:layout_width="0dp"
@@ -90,33 +89,22 @@
             android:hint="pregunta"
             android:textAlignment="center"
             android:textSize="50dp" />
-     <!--
-        <TextView
-            android:id="@+id/labelTextoPregunta2"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:hint="five"
-            android:textSize="50dp"
-            android:gravity="center"
-            android:textAlignment="center"
-            />
--->
+
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="1100dp"
-        android:layout_height="300dp"
-        android:background="@drawable/edit_text_radius"
-        android:layout_marginTop="30dp"
+        android:layout_width="1250dp"
+        android:layout_height="270dp"
         android:layout_gravity="center"
-        android:orientation="horizontal"
-        >
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edit_text_radius"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnBox1"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:layout_weight="1"
             android:background="@color/naranja"
             android:gravity="center"
@@ -129,7 +117,7 @@
         <Button
             android:id="@+id/btnBox2"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:layout_weight="1"
             android:background="@color/verde"
             android:gravity="center"
@@ -142,20 +130,19 @@
         <Button
             android:id="@+id/btnBox3"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:layout_weight="1"
-            android:text="3"
-            android:textSize="100sp"
+            android:background="@color/rojo"
             android:gravity="center"
             android:scaleType="centerInside"
-            android:background="@color/rojo"
-            app:backgroundTint="@null"
-            />
+            android:text="3"
+            android:textSize="100sp"
+            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/btnBox4"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:layout_weight="1"
             android:background="@color/azulOscuro"
             android:gravity="center"
@@ -168,7 +155,7 @@
         <Button
             android:id="@+id/btnBox5"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:layout_weight="1"
             android:background="@color/amarillo"
             android:gravity="center"
@@ -188,7 +175,7 @@
         app:backgroundTint="@null"
         android:text="ACEPTAR"
         android:textSize="35dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:textColor="@color/blanco"
         />
