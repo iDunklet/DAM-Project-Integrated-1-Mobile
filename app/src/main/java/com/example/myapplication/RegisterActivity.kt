@@ -90,8 +90,6 @@ class RegisterActivity : AppCompatActivity() {
                     fechaHoraFin = null
                 )
 
-
-
                 val intent = Intent(this, GameActivity::class.java)
                 intent.putExtra("JUGADOR", nuevoJugador)
                 intent.putExtra("PARTIDA", nuevaPartida)
