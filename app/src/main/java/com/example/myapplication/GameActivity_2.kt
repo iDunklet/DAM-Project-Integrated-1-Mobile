@@ -1,14 +1,12 @@
 package com.example.myapplication
 
-import Partida
+import UserGameData
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 class GameActivity_2 : AppCompatActivity() {
 
@@ -52,9 +50,9 @@ class GameActivity_2 : AppCompatActivity() {
         val allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
 
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
-        val jugador = intent.getSerializableExtra("JUGADOR") as? Partida
+        val jugador = intent.getSerializableExtra("JUGADOR") as? UserGameData
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
-        val partida = intent.getSerializableExtra("PARTIDA") as? Partida
+        val partida = intent.getSerializableExtra("PARTIDA") as? UserGameData
         val totalRondas = partida?.rondas ?: allQuestions.size
 
         gameQuestions = allQuestions.shuffled().take(totalRondas)

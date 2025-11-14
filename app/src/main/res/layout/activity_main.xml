@@ -2,7 +2,7 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/homeScreenGrid"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp"
@@ -12,48 +12,48 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-        <ImageView
-            android:contentDescription="@string/logo"
-            android:layout_width="700dp"
-            android:layout_height="match_parent"
+    <ImageView
+        android:contentDescription="@string/logo"
+        android:layout_width="700dp"
+        android:layout_height="match_parent"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_gravity="start"
+        android:src="@drawable/logo_app"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:paddingTop="300dp"
+        android:rowCount="2"
+        android:columnCount="1"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_gravity="start"
-            android:src="@drawable/logo_app"/>
+            android:layout_gravity="center"
+            android:background="@drawable/boton_verde"
+            android:text="@string/play"
+            android:textSize="66sp"
+            app:backgroundTint="@null"/>
 
-        <GridLayout
+        <Button
+            android:id="@+id/btnExit"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:paddingTop="300dp"
-            android:rowCount="2"
-            android:columnCount="1"
-            android:layout_gravity="center">
-
-            <Button
-                android:id="@+id/btnStart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_gravity="center"
-                android:background="@drawable/boton_verde"
-                android:text="@string/play"
-                android:textSize="66sp"
-                app:backgroundTint="@null"/>
-
-            <Button
-                android:id="@+id/btnExit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_gravity="center"
-                android:background="@drawable/boton_rojo"
-                android:text="@string/exit"
-                android:textSize="50sp"
-                app:backgroundTint="@null"/>
-        </GridLayout>
-
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:background="@drawable/boton_rojo"
+            android:text="@string/exit"
+            android:textSize="50sp"
+            app:backgroundTint="@null"/>
     </GridLayout>
+
+</GridLayout>

@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-import Partida
+import UserGameData
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,13 +12,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import android.annotation.SuppressLint
-import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 
 class GameActivity : AppCompatActivity() {
 
     private var jugadorActual: Jugador? = null
-    private var partidaActual: Partida? = null
+    private var partidaActual: UserGameData? = null
     private lateinit var gameQuestions: List<PreguntaJuego>
     private var currentQuestionIndex = 0
     private var score = 0
@@ -39,7 +38,7 @@ class GameActivity : AppCompatActivity() {
 
         try {
             jugadorActual = intent.getSerializableExtra("JUGADOR") as? Jugador
-            partidaActual = intent.getSerializableExtra("PARTIDA") as? Partida
+            partidaActual = intent.getSerializableExtra("PARTIDA") as? UserGameData
         } catch (e: Exception) {
             reportFatalError("Error leyendo datos de partida", e)
             return

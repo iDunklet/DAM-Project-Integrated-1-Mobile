@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-import Partida
+import UserGameData
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -15,9 +15,9 @@ class GameOverActivity : AppCompatActivity() {
         val intent = getIntent()
 
         val partidas = listOf(
-            Partida(1, 1, 5, 1, 4, Date(1769820900000), Date(1769820960000)),
-            Partida(2, 2, 10, 1, 8, Date(1769820900000), Date(1769820960000)),
-            Partida(3, 3, 5, 2, 5, Date(1769820900000), Date(1769820960000))
+            UserGameData(1, 1, 5, 1, 4, Date(1769820900000), Date(1769820960000)),
+            UserGameData(2, 2, 10, 1, 8, Date(1769820900000), Date(1769820960000)),
+            UserGameData(3, 3, 5, 2, 5, Date(1769820900000), Date(1769820960000))
         )
 
         val tvJugador = findViewById<TextView>(R.id.labelJugador)

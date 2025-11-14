@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-import Partida
+import UserGameData
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -75,22 +75,18 @@ class RegisterActivity : AppCompatActivity() {
             if (validateInputs(newPlayerName, newPlayerAge)) {
 
                  val nuevoJugador = Jugador(
-                     idJugador = 4,
                      nombre = newPlayerName.text.toString(),
                      edad = newPlayerAge.text.toString().toInt()
                  )
 
-                val nuevaPartida = Partida(
-                    idPartida = 4,
-                    idJugador = 4,
-                    rondas = numeroRondas,
+                val nuevaPartida = UserGameData(
                     dificultad = nivelDificultad,
                     aciertos = 0,
+                    errores = 0,
                     fechaHoraInicio = Date(),
-                    fechaHoraFin = null
+                    fechaHoraFin = null,
+                    gameTime = 0
                 )
-
-
 
                 val intent = Intent(this, GameActivity_2::class.java)
                 intent.putExtra("JUGADOR", nuevoJugador)
