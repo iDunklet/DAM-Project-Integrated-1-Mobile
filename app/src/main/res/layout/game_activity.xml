@@ -106,64 +106,55 @@
             android:layout_width="0dp"
             android:layout_height="250dp"
             android:layout_weight="1"
-            android:background="@color/naranja"
-            android:gravity="center"
-            android:scaleType="centerInside"
+            android:background="@drawable/boton_base"
             android:text="1"
-            android:textColor="#616161"
             android:textSize="100sp"
-            app:backgroundTint="@null" />
+            android:textColor="@color/black"
+            app:backgroundTint="@null"/>
 
         <Button
             android:id="@+id/btnBox2"
             android:layout_width="0dp"
             android:layout_height="250dp"
             android:layout_weight="1"
-            android:background="@color/verde"
-            android:gravity="center"
-            android:scaleType="centerInside"
-            android:text="2"
-            android:textColor="#006064"
+            android:background="@drawable/boton_base"
+            android:text="1"
             android:textSize="100sp"
-            app:backgroundTint="@null" />
+            android:textColor="@color/black"
+            app:backgroundTint="@null"/>
 
         <Button
             android:id="@+id/btnBox3"
             android:layout_width="0dp"
             android:layout_height="250dp"
             android:layout_weight="1"
-            android:background="@color/rojo"
-            android:gravity="center"
-            android:scaleType="centerInside"
-            android:text="3"
+            android:background="@drawable/boton_base"
+            android:text="1"
             android:textSize="100sp"
-            app:backgroundTint="@null" />
+            android:textColor="@color/black"
+            app:backgroundTint="@null"/>
 
         <Button
             android:id="@+id/btnBox4"
             android:layout_width="0dp"
             android:layout_height="250dp"
             android:layout_weight="1"
-            android:background="@color/azulOscuro"
-            android:gravity="center"
-            android:scaleType="centerInside"
-            android:text="4"
-            android:textColor="#5E35B1"
+            android:background="@drawable/boton_base"
+            android:text="1"
             android:textSize="100sp"
-            app:backgroundTint="@null" />
+            android:textColor="@color/black"
+            app:backgroundTint="@null"/>
 
         <Button
             android:id="@+id/btnBox5"
             android:layout_width="0dp"
             android:layout_height="250dp"
             android:layout_weight="1"
-            android:background="@color/amarillo"
-            android:gravity="center"
-            android:scaleType="centerInside"
-            android:text="5"
-            android:textColor="#607D8B"
+            android:background="@drawable/boton_base"
+            android:text="1"
             android:textSize="100sp"
-            app:backgroundTint="@null" />
+            android:textColor="@color/black"
+            app:backgroundTint="@null"/>
 
     </LinearLayout>
 
