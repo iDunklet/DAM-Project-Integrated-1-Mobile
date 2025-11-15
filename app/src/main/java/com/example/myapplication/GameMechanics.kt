@@ -1,13 +1,20 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.widget.Button
 import androidx.core.content.ContextCompat
 import android.graphics.drawable.Drawable
+import android.widget.FrameLayout
+import androidx.core.content.ContextCompat.getColor
 
 class GameMechanics(private val context: Context) {
-    private val randomColors = listOf(
-        R.color.naranja, R.color.azulOscuro, R.color.amarillo, R.color.verde, R.color.purple
+    public val randomColors = listOf(
+        R.color.naranja,
+        R.color.azulOscuro,
+        R.color.amarillo,
+        R.color.marron,
+        R.color.purple
                                      )
 
     /**
@@ -60,34 +67,99 @@ class GameMechanics(private val context: Context) {
      * Comprueba la respuesta seleccionada y aplica los foregrounds correspondientes.
      * Devuelve true si la respuesta era correcta, false si no.
      */
-    fun checkAnswer(selectedButton: Button, buttons: List<Button>, question: PreguntaJuego): Boolean {
+    fun checkAnswer(
+        selectedButton: Button,
+        buttons: List<Button>,
+        containers: List<FrameLayout>,
+        question: PreguntaJuego,
+        context: Context
+                   ): Boolean {
         val selectedTag = selectedButton.tag?.toString() ?: ""
         val correctAnswer = question.respuesta_correcta_en
 
         val isCorrect = isAnswerCorrect(selectedTag, correctAnswer)
 
-        // Deshabilitar todos los botones
         buttons.forEach { it.isEnabled = false }
 
-            if (isCorrect) {
-                when(question.categoria.uppercase()) {
-                    "NUMBER" ->  selectedButton.background = getDrawable("boton_verde")
-                    "SHAPE" -> var drawableId =
-                    miIconoResultado.setBackgroundResource(R.drawable.borde_verde_si_correcto)
+        val selectedIndex = buttons.indexOf(selectedButton)
+        
+        val correctIndex = buttons.indexOfFirst {
+            isAnswerCorrect(it.tag?.toString() ?: "", correctAnswer)
+        }
 
+        if (isCorrect) {
+            when(question.categoria.uppercase()) {
+                "NUMBER" -> {
+                    selectedButton.background = getDrawable("boton_verde")
                 }
-                selectedButton.background = getDrawable("boton_verde")
-            } else {
-                selectedButton.background = getDrawable("boton_rojo")
-                val correctButton = buttons.find {
-                    isAnswerCorrect(it.tag?.toString() ?: "", correctAnswer)
+                "SHAPE" -> {
+                    containers[selectedIndex].background = getDrawable("boton_verde")
                 }
-                correctButton?.background = getDrawable("boton_verde")
+                "COLOR" -> {
+                    containers[selectedIndex].background = getDrawable("boton_verde")
+                    selectedButton.layoutParams.width = 200
+                    selectedButton.layoutParams.height = 200
+                }
             }
 
+            buttons.forEachIndexed { index, button ->
+                if (index != selectedIndex && index != correctIndex) {
+                    button.background = getDrawable("boton_base")
+                }
+
+            }
+
+        } else {
+
+            when(question.categoria.uppercase()) {
+                "NUMBER" -> {
+                    selectedButton.background = getDrawable("boton_rojo")
+                }
+                "SHAPE" -> {
+                    containers[selectedIndex].background = getDrawable("boton_rojo")
+                }
+                "COLOR" -> {
+                    containers[selectedIndex].background = getDrawable("boton_rojo")
+                    selectedButton.layoutParams.width = 200
+                    selectedButton.layoutParams.height = 200
+                }
+            }
+
+            val correctIndex = buttons.indexOfFirst {
+                isAnswerCorrect(it.tag?.toString() ?: "", correctAnswer)
+            }
+            if (correctIndex != -1) {
+                when(question.categoria.uppercase()) {
+                    "NUMBER" -> {
+                        buttons[correctIndex].background = getDrawable("boton_verde")
+                    }
+
+                    "SHAPE" -> {
+                        containers[correctIndex].background = getDrawable("boton_verde")
+                    }
+
+                    "COLOR" -> {
+                        containers[correctIndex].background = getDrawable("boton_verde")
+                        buttons[correctIndex].layoutParams.width = 200
+                        buttons[correctIndex].layoutParams.height = 200
+                    }
+                }
+
+            }
+
+            buttons.forEachIndexed { index, button ->
+                if (index != selectedIndex && index != correctIndex) {
+                    button.background = getDrawable("boton_base")
+                }
+
+
+            }
+
+        }
 
         return isCorrect
     }
+
 
     /** Normaliza números escritos como texto para la categoría NUMBER */
     fun isAnswerCorrect(selected: String, correct: String): Boolean {
@@ -149,7 +221,5 @@ class GameMechanics(private val context: Context) {
         return ContextCompat.getDrawable(context, resId)
     }
 
-    companion object {
-        public lateinit val drawableId;
-    }
 }
+
