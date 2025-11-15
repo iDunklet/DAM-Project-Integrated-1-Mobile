@@ -9,7 +9,7 @@ import android.widget.FrameLayout
 import androidx.core.content.ContextCompat.getColor
 
 class GameMechanics(private val context: Context) {
-    public val randomColors = listOf(
+    val randomColors = listOf(
         R.color.naranja,
         R.color.azulOscuro,
         R.color.amarillo,
@@ -17,46 +17,74 @@ class GameMechanics(private val context: Context) {
         R.color.purple
                                      )
 
+    /*
+    val randomColors = listOf(
+        R.color.pastel_blue,
+        R.color.pastel_green,
+        R.color.pastel_yellow,
+        R.color.pastel_orange,
+        R.color.pastel_pink
+    )
+    */
+
+
     /**
      * Configura los botones según la pregunta y la categoría.
      * Aplica colores aleatorios para NUMBER y SHAPE, y para COLOR deja fondo aleatorio.
      * Guarda el valor real de cada botón en tag.
      */
-    fun setupQuestion(buttons: List<Button>, question: PreguntaJuego) {
+    fun setupQuestion(
+        buttons: List<Button>,
+        containers: List<FrameLayout>,
+        question: PreguntaJuego
+    ) {
         val shuffledOptions = question.opciones_en.shuffled()
+        val shuffledColors = randomColors.shuffled()
 
         buttons.zip(shuffledOptions).forEach { (button, option) ->
             button.tag = option
             button.isEnabled = true
-            button.foreground = null // quitar foreground anterior
+            button.foreground = null
         }
 
         when (question.categoria.uppercase()) {
+
             "NUMBER" -> {
-                buttons.zip(shuffledOptions).forEach { (button, option) ->
+                buttons.zip(shuffledOptions).forEachIndexed { index, (button, option) ->
                     button.text = mapNumber(option)
-                    val color = randomColors.random()
+                    button.textSize = 100f
+                    button.setTextColor(ContextCompat.getColor(context, R.color.negro))
+
+                    val color = shuffledColors[index % shuffledColors.size]
                     button.setBackgroundColor(ContextCompat.getColor(context, color))
                 }
             }
+
             "SHAPE" -> {
-                buttons.zip(shuffledOptions).forEach { (button, option) ->
+                buttons.zip(shuffledOptions).forEachIndexed { index, (button, option) ->
                     button.text = ""
-                    val drawable = mapShape(option)
-                    button.setBackgroundResource(drawable)
+                    button.setBackgroundResource(mapShape(option))
+
+                    val color = shuffledColors[index % shuffledColors.size]
+                    containers[index].setBackgroundColor(
+                        ContextCompat.getColor(context, color)
+                    )
                 }
             }
+
             "COLOR" -> {
                 buttons.zip(shuffledOptions).forEach { (button, option) ->
                     button.text = ""
-                    val color = mapColor(option)
-                    button.setBackgroundColor(ContextCompat.getColor(context, color))
+                    button.setBackgroundColor(
+                        ContextCompat.getColor(context, mapColor(option))
+                    )
                 }
             }
+
             else -> {
-                buttons.zip(shuffledOptions).forEach { (button, option) ->
+                buttons.zip(shuffledOptions).forEachIndexed { index, (button, option) ->
                     button.text = option
-                    val color = randomColors.random()
+                    val color = shuffledColors[index % shuffledColors.size]
                     button.setBackgroundColor(ContextCompat.getColor(context, color))
                 }
             }
@@ -220,6 +248,7 @@ class GameMechanics(private val context: Context) {
         val resId = context.resources.getIdentifier(name, "drawable", context.packageName)
         return ContextCompat.getDrawable(context, resId)
     }
+
 
 }
 

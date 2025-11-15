@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import UserGameData
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -12,16 +13,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.util.TypedValueCompat.dpToPx
+import java.util.Date
 
 class GameActivity_2 : AppCompatActivity() {
-
-    private val randomColors = listOf(
-        R.color.naranja,
-        R.color.azulOscuro,
-        R.color.amarillo,
-        R.color.marron,
-        R.color.purple
-                                     )
+    
     private lateinit var labelTextoPregunta: TextView
     private lateinit var allContainers: List<FrameLayout>
     private lateinit var labelNumRonda: TextView
@@ -34,6 +29,11 @@ class GameActivity_2 : AppCompatActivity() {
     private var currentQuestionIndex = 0
     private var score = 0
     private var isAnswered = false
+
+    private lateinit var jugador: Jugador
+    private lateinit var partida: UserGameData
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,9 +70,9 @@ class GameActivity_2 : AppCompatActivity() {
         val allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
 
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
-        val jugador = intent.getSerializableExtra("JUGADOR") as? UserGameData
+        jugador = (intent.getSerializableExtra("JUGADOR") as? Jugador)!!
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
-        val partida = intent.getSerializableExtra("PARTIDA") as? UserGameData
+        partida = (intent.getSerializableExtra("PARTIDA") as? UserGameData)!!
         val totalRondas = partida?.rondas ?: allQuestions.size
 
         gameQuestions = allQuestions.shuffled().take(totalRondas)
@@ -102,36 +102,29 @@ class GameActivity_2 : AppCompatActivity() {
         labelNumRonda.text = (currentQuestionIndex + 1).toString()
         labelTextoPregunta.text = question.enunciado_es
 
-        // Resetear contenedores y botones
+        // 1. Resetear contenedores
         allContainers.forEach { container ->
             container.background = ContextCompat.getDrawable(this, R.drawable.edit_text_radius)
         }
+
+        // 2. Resetear botones (tamaño + habilitación)
         allButtons.forEach { button ->
             button.isEnabled = true
 
-            allButtons.forEach { button ->
-                val params = button.layoutParams
-                params.width = FrameLayout.LayoutParams.MATCH_PARENT
-                params.height = dpToPx(250)   // volver al tamaño original
-                button.layoutParams = params
-
-                button.requestLayout()
-
-                val shuffledColors = randomColors.shuffled()
-                allButtons.forEachIndexed { index, button ->
-                    val colorRes = shuffledColors[index]
-                    button.setBackgroundColor(ContextCompat.getColor(this, colorRes))
-                    button.isEnabled = true
-                }
-
-                gameMechanics.setupQuestion(allButtons, question)
-
-                isAnswered = false
-                btnNextRound.visibility = View.INVISIBLE
-            }
+            val params = button.layoutParams
+            params.width = FrameLayout.LayoutParams.MATCH_PARENT
+            params.height = dpToPx(250)
+            button.layoutParams = params
+            button.requestLayout()
         }
-    }
 
+        // 3. Configurar la pregunta (ESTO ya pone colores, imágenes o textos)
+        gameMechanics.setupQuestion(allButtons, allContainers, question)
+
+        // 4. Estado del juego
+        isAnswered = false
+        btnNextRound.visibility = View.INVISIBLE
+    }
     private fun dpToPx(dp: Int): Int {
         return (dp * resources.displayMetrics.density).toInt()
     }
@@ -157,12 +150,16 @@ class GameActivity_2 : AppCompatActivity() {
             else "SIGUIENTE RONDA"
     }
     private fun endGame() {
-        Toast.makeText(
-            this,
-            "Juego terminado: $score / ${gameQuestions.size}",
-            Toast.LENGTH_LONG
-                      ).show()
-        labelTextoPregunta.text = "¡Puntuación final: $score / ${gameQuestions.size}!"
+
+        partida.aciertos = score
+        partida.errores = (partida.rondas - score)
+        partida.fechaHoraFin = Date()
+
+        val intent = Intent(this, GameOverActivity::class.java)
+        intent.putExtra("JUGADOR", jugador)
+        intent.putExtra("PARTIDA", partida)
+        startActivity(intent)
+
         btnNextRound.text = "FINALIZAR"
         btnNextRound.setOnClickListener { finish() }
     }

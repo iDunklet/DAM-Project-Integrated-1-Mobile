@@ -80,6 +80,7 @@ class RegisterActivity : AppCompatActivity() {
                  )
 
                 val nuevaPartida = UserGameData(
+                    rondas = numeroRondas,
                     dificultad = nivelDificultad,
                     aciertos = 0,
                     errores = 0,
