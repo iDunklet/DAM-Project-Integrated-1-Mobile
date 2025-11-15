@@ -15,7 +15,10 @@
     <color name="verde_correcto">#4CAF50</color>
     <color name="rojo_incorrecto">#F44336</color>
     <color name="transparent">#00000000</color>
-
+    <color name="marron">#6D4C41</color>
+    <color name="gris">#9E9E9E</color>
+    <color name="verde_oscuro">#1E7A3B</color>
+    <color name="verde_claro">#66FF7F</color>
 
     <!-- respuestas preguntas clase color -->
     <color name="red">#E53935</color>
