@@ -40,4 +40,10 @@
     <color name="gray">#9E9E9E</color>
 
 
+    <!-- extra -->
+    <color name="faded_gold">#C79F3F</color>
+    <color name="state_error">#FFF44336</color>
+
+
+
 </resources>

@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import UserGameData
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -12,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.Date
 
 class RegisterActivity : AppCompatActivity() {
+
+    private lateinit var mediaPlayer: MediaPlayer
 
     private var numeroRondas: Int = 0
     private var nivelDificultad: Int = 0
@@ -33,6 +36,9 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.register_activity)
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.school)
+        mediaPlayer.start()
 
         // Inicialización de Vistas
         val newPlayerName = findViewById<EditText>(R.id.TextboxNombre)
@@ -92,6 +98,7 @@ class RegisterActivity : AppCompatActivity() {
                 val intent = Intent(this, GameActivity_2::class.java)
                 intent.putExtra("JUGADOR", nuevoJugador)
                 intent.putExtra("PARTIDA", nuevaPartida)
+                onDestroy()
                 startActivity(intent)
 
             }
@@ -152,5 +159,9 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         return true
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer.release()
     }
 }

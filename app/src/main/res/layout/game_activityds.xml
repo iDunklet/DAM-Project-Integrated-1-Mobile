@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"  >
+
+        <ImageButton
+            android:id="@+id/IconBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/flecha_izquierda"
+            app:tint="#C79F3F"
+            android:visibility="invisible"
+            />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/labelCuentaAtras"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/dark_metal_border"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#E0E0E0"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:id="@+id/labelNumRonda"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="40sp"
+            android:textColor="#C79F3F"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="40sp"
+            android:textColor="#666666"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/labelNumTotalRondas"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="40sp"
+            android:textColor="#E0E0E0"
+            android:gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gothic_stone_panel" android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/labelTextoPregunta1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="150dp"
+            android:gravity="center"
+            android:hint="Pregunta"
+            android:textColorHint="#9E9E9E"
+            android:textColor="#E0E0E0"
+            android:textAlignment="center"
+            android:textSize="35sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/containerBtn1"
+            android:layout_width="0dp"
+            android:layout_height="270dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btnBox1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/dark_metal_button"
+                android:text="1"
+                android:textColor="#E0E0E0"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/containerBtn2"
+            android:layout_width="0dp"
+            android:layout_height="270dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btnBox2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/dark_metal_button"
+                android:text="2"
+                android:textColor="#E0E0E0"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                />
+
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/containerBtn3"
+            android:layout_width="0dp"
+            android:layout_height="270dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btnBox3"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/dark_metal_button"
+                android:text="3"
+                android:textColor="#E0E0E0"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                />
+
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/containerBtn4"
+            android:layout_width="0dp"
+            android:layout_height="270dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btnBox4"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/dark_metal_button"
+                android:text="4"
+                android:textColor="#E0E0E0"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/containerBtn5"
+            android:layout_width="0dp"
+            android:layout_height="270dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btnBox5"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/dark_metal_button"
+                android:text="5"
+                android:textColor="#E0E0E0"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonRegisterAceptar"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:background="@drawable/faded_gold_button"
+        android:text="ACEPTAR"
+        android:textSize="25sp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textColor="#1C1C1C"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        />
+</LinearLayout>

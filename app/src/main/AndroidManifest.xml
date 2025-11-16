@@ -27,6 +27,8 @@
 
         <activity android:name=".GameActivity_2"/>
 
+        <activity android:name=".GameActivity_ds"/>
+
         <activity android:name=".GameOverActivity" />
 
     </application>

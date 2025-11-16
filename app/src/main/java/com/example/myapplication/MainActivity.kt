@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        mediaPlayer = MediaPlayer.create(this, R.raw.colorfull)
+        mediaPlayer = MediaPlayer.create(this, R.raw.funny_toy)
         mediaPlayer.start()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.homeScreenGrid)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val btnExit = findViewById<Button>(R.id.btnExit)
         btnStart.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+            onDestroy()
         }
         btnExit.setOnClickListener {
             finishAffinity()

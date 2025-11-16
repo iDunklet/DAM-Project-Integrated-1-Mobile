@@ -2,21 +2,22 @@ package com.example.myapplication
 
 import UserGameData
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.util.TypedValueCompat.dpToPx
+import java.sql.Time
 import java.util.Date
 
 class GameActivity_2 : AppCompatActivity() {
-    
+    private lateinit var mediaPlayer: MediaPlayer
+
+    private lateinit var labelCuentaAtras: TextView
     private lateinit var labelTextoPregunta: TextView
     private lateinit var allContainers: List<FrameLayout>
     private lateinit var labelNumRonda: TextView
@@ -33,14 +34,17 @@ class GameActivity_2 : AppCompatActivity() {
     private lateinit var jugador: Jugador
     private lateinit var partida: UserGameData
 
-
+    private var countDownTimer: android.os.CountDownTimer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game_activity2)
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.playfull)
+        mediaPlayer.start()
 
         // Inicializar views
+        labelCuentaAtras = findViewById(R.id.labelCuentaAtras)
         labelTextoPregunta = findViewById(R.id.labelTextoPregunta1)
         labelNumRonda = findViewById(R.id.labelNumRonda)
         labelNumTotalRondas = findViewById(R.id.labelNumTotalRondas)
@@ -149,6 +153,7 @@ class GameActivity_2 : AppCompatActivity() {
             if (currentQuestionIndex >= gameQuestions.size) "VER RESULTADOS"
             else "SIGUIENTE RONDA"
     }
+
     private fun endGame() {
 
         partida.aciertos = score
@@ -162,5 +167,10 @@ class GameActivity_2 : AppCompatActivity() {
 
         btnNextRound.text = "FINALIZAR"
         btnNextRound.setOnClickListener { finish() }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer.release()
     }
 }
