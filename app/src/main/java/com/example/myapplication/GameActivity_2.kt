@@ -77,7 +77,13 @@ class GameActivity_2 : AppCompatActivity() {
         jugador = (intent.getSerializableExtra("JUGADOR") as? Jugador)!!
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         partida = (intent.getSerializableExtra("PARTIDA") as? UserGameData)!!
-        val totalRondas = partida?.rondas ?: allQuestions.size
+        //val totalRondas = partida?.rondas ?: allQuestions.size
+
+        val rawRondas = partida.rondas
+        val totalRondas = rawRondas.coerceIn(1, allQuestions.size)
+
+        gameQuestions = allQuestions.shuffled().take(totalRondas)
+        labelNumTotalRondas.text = totalRondas.toString()
 
         gameQuestions = allQuestions.shuffled().take(totalRondas)
         labelNumTotalRondas.text = totalRondas.toString()

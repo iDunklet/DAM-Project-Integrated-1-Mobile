@@ -95,10 +95,10 @@ class RegisterActivity : AppCompatActivity() {
                     gameTime = 0
                 )
 
-                val intent = Intent(this, GameActivity_2::class.java)
+                val intent = Intent(this, GameActivity_ds::class.java)
                 intent.putExtra("JUGADOR", nuevoJugador)
                 intent.putExtra("PARTIDA", nuevaPartida)
-                onDestroy()
+                onPause()
                 startActivity(intent)
 
             }
@@ -160,8 +160,10 @@ class RegisterActivity : AppCompatActivity() {
 
         return true
     }
-    override fun onDestroy() {
-        super.onDestroy()
-        mediaPlayer.release()
+    override fun onPause() {
+        super.onPause()
+        if (this::mediaPlayer.isInitialized && mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
     }
 }
