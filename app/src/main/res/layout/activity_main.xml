@@ -9,7 +9,6 @@
     android:rowCount="1"
     android:columnCount="2"
     android:background="@color/fondoPantalla"
-    android:orientation="horizontal"
     tools:context=".MainActivity">
 
     <ImageView
