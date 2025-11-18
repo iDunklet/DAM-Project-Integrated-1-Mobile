@@ -1,12 +1,10 @@
 package com.example.myapplication
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.widget.Button
 import androidx.core.content.ContextCompat
 import android.graphics.drawable.Drawable
 import android.widget.FrameLayout
-import androidx.core.content.ContextCompat.getColor
 
 class GameMechanics(private val context: Context) {
     val randomColors = listOf(
@@ -38,7 +36,7 @@ class GameMechanics(private val context: Context) {
         containers: List<FrameLayout>,
         question: PreguntaJuego
     ) {
-        val shuffledOptions = question.opciones_en.shuffled()
+        val shuffledOptions = question.opcionesEn.shuffled()
         val shuffledColors = randomColors.shuffled()
 
         buttons.zip(shuffledOptions).forEach { (button, option) ->
@@ -103,7 +101,7 @@ class GameMechanics(private val context: Context) {
         context: Context
                    ): Boolean {
         val selectedTag = selectedButton.tag?.toString() ?: ""
-        val correctAnswer = question.respuesta_correcta_en
+        val correctAnswer = question.respuestaCorrectaEn
 
         val isCorrect = isAnswerCorrect(selectedTag, correctAnswer)
 

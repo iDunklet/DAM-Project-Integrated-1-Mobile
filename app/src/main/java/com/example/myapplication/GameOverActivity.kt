@@ -11,9 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 class GameOverActivity : AppCompatActivity() {
     private lateinit var jugador: Jugador
     private lateinit var partida: UserGameData
-
     private lateinit var btnRePlay: Button
-
     private lateinit var btnExit: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +40,7 @@ class GameOverActivity : AppCompatActivity() {
         val secs = ((diffMillis / 1000) % 60).toInt()
 
         tvTiempo.text = "${mins}m ${secs}s"
-        val partidaActual = UserGameData(
+        val partidaCompletada = UserGameData(
             partida.rondas,
             partida.dificultad,
             partida.aciertos,
@@ -51,7 +49,8 @@ class GameOverActivity : AppCompatActivity() {
             partida.fechaHoraFin,
             partida.gameTime
         )
-        val jugadorActual = Jugador(jugador.nombre, jugador.edad, partidaActual)
+        jugador.partidas.add(partidaCompletada)
+        val jugadorActual = Jugador(jugador.nombre, jugador.edad, jugador.partidas)
         jugadores.add(jugadorActual)
         FilesManager.saveFile(this, jugadores)
 

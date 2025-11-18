@@ -11,7 +11,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import java.sql.Time
 import java.util.Date
 
 class GameActivity_2 : AppCompatActivity() {
@@ -35,7 +34,6 @@ class GameActivity_2 : AppCompatActivity() {
     private lateinit var partida: UserGameData
 
     private var countDownTimer: android.os.CountDownTimer? = null
-    private lateinit var allQuestions: List<PreguntaJuego>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,24 +66,17 @@ class GameActivity_2 : AppCompatActivity() {
         val btnBack: ImageButton = findViewById(R.id.IconBack)
         btnBack.setOnClickListener { finish() }
 
+
+
         gameMechanics = GameMechanics(this)
 
+        val allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
 
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         jugador = (intent.getSerializableExtra("JUGADOR") as? Jugador)!!
+        @Suppress("DEPRECATION", "UNCHECKED_CAST")
+        partida = (intent.getSerializableExtra("PARTIDA") as? UserGameData)!!
         //val totalRondas = partida?.rondas ?: allQuestions.size
-
-        val partidaActual = jugador.partidas.lastOrNull()
-        if (partidaActual == null) {
-            allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
-        } else {
-            partida = partidaActual
-            allQuestions = if (partidaActual.dificultad == 1) {
-                PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
-            } else {
-                PreguntaJuego.loadQuestionsFromJson(this, "nivel2.json")
-            }
-        }
 
         val rawRondas = partida.rondas
         val totalRondas = rawRondas.coerceIn(1, allQuestions.size)
@@ -118,7 +109,7 @@ class GameActivity_2 : AppCompatActivity() {
 
         val question = gameQuestions[currentQuestionIndex]
         labelNumRonda.text = (currentQuestionIndex + 1).toString()
-        labelTextoPregunta.text = question.enunciado_es
+        labelTextoPregunta.text = question.enunciadoEs
 
         // 1. Resetear contenedores
         allContainers.forEach { container ->
@@ -176,17 +167,15 @@ class GameActivity_2 : AppCompatActivity() {
 
         val intent = Intent(this, GameOverActivity::class.java)
         intent.putExtra("JUGADOR", jugador)
-        onPause()
+        intent.putExtra("PARTIDA", partida)
         startActivity(intent)
 
         btnNextRound.text = "FINALIZAR"
         btnNextRound.setOnClickListener { finish() }
     }
 
-    override fun onPause() {
-        super.onPause()
-        if (this::mediaPlayer.isInitialized && mediaPlayer.isPlaying) {
-            mediaPlayer.pause()
-        }
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer.release()
     }
 }

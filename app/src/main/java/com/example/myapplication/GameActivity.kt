@@ -109,9 +109,9 @@ class GameActivity : AppCompatActivity() {
 
         val question = gameQuestions[currentQuestionIndex]
         labelNumRonda.text = (currentQuestionIndex + 1).toString()
-        labelTextoPregunta1.text = question.enunciado_es
+        labelTextoPregunta1.text = question.enunciadoEs
 
-        val shuffledOptions = padOptionsToFive(question.opciones_en.shuffled())
+        val shuffledOptions = padOptionsToFive(question.opcionesEn.shuffled())
 
         // Reiniciamos botones: quitar foreground (verde/rojo) y habilitar
         allButtons.forEach { button ->
@@ -192,7 +192,7 @@ class GameActivity : AppCompatActivity() {
 
         val question = gameQuestions[currentQuestionIndex]
         val selectedTag = selectedButton.tag?.toString() ?: ""
-        val correct = question.respuesta_correcta_en
+        val correct = question.respuestaCorrectaEn
 
         val isCorrect = isAnswerCorrect(selectedTag, correct)
         allButtons.forEach { it.isEnabled = false }

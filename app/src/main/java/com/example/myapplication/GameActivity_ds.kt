@@ -11,7 +11,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import java.sql.Time
 import java.util.Date
 import android.os.Handler
 import android.os.Looper
@@ -37,10 +36,7 @@ class GameActivity_ds : AppCompatActivity() {
     private lateinit var partida: UserGameData
 
     private var countDownTimer: android.os.CountDownTimer? = null
-    private val ROUND_TIME_SECONDS: Long = 10
-
-    private var nextQuestionRunnable: Runnable? = null
-    private val handler = Handler(Looper.getMainLooper())
+    private val ROUND_TIME_SECONDS: Long = 30
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,16 +72,13 @@ class GameActivity_ds : AppCompatActivity() {
 
         gameMechanics = GameMechanics(this)
 
-        val allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel3.json")
+        val allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
 
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         jugador = (intent.getSerializableExtra("JUGADOR") as? Jugador)!!
-
-        val partidaActual = jugador.partidas.lastOrNull()
-        partida = partidaActual!!
-
-        val rawRondas = partida.rondas
-        val totalRondas = rawRondas.coerceIn(1, allQuestions.size)
+        @Suppress("DEPRECATION", "UNCHECKED_CAST")
+        partida = (intent.getSerializableExtra("PARTIDA") as? UserGameData)!!
+        val totalRondas = partida?.rondas ?: allQuestions.size
 
         gameQuestions = allQuestions.shuffled().take(totalRondas)
         labelNumTotalRondas.text = totalRondas.toString()
@@ -105,9 +98,6 @@ class GameActivity_ds : AppCompatActivity() {
     }
 
     private fun loadQuestion() {
-        nextQuestionRunnable?.let { handler.removeCallbacks(it) }
-        countDownTimer?.cancel()
-
         if (currentQuestionIndex >= gameQuestions.size) {
             endGame()
             return
@@ -115,8 +105,7 @@ class GameActivity_ds : AppCompatActivity() {
 
         val question = gameQuestions[currentQuestionIndex]
         labelNumRonda.text = (currentQuestionIndex + 1).toString()
-        labelTextoPregunta.text = question.enunciado_es
-
+        labelTextoPregunta.text = question.enunciadoEs
 
         // 1. Resetear contenedores
         allContainers.forEach { container ->
@@ -159,37 +148,30 @@ class GameActivity_ds : AppCompatActivity() {
             allContainers,
             question, this)
 
-        if (correct) {
-            score++
-        } else {
-            endGame()
-        }
-
+        if (correct) score++
 
         allButtons.forEach { it.isEnabled = false }
 
 
         btnNextRound.visibility = View.VISIBLE
 
-        btnNextRound.text = if (correct) "¡CORRECTO! (Avanzando...)" else "Put these foolish ambitions to rest)"
+        btnNextRound.text = if (correct) "¡CORRECTO! (Avanzando...)" else "FALLO. (Avanzando...)"
 
-        nextQuestionRunnable = Runnable {
-            if (!isFinishing) {
-                currentQuestionIndex++
-                if (currentQuestionIndex >= gameQuestions.size) {
-                    endGame()
-                } else {
-                    loadQuestion()
-                }
+        Handler(Looper.getMainLooper()).postDelayed({
+
+            currentQuestionIndex++
+
+            if (currentQuestionIndex >= gameQuestions.size) {
+                endGame()
+            } else {
+                loadQuestion()
             }
-        }
-        handler.postDelayed(nextQuestionRunnable!!, 3000)
+
+        }, 3000)
 
     }
 
     private fun endGame() {
-        nextQuestionRunnable?.let { handler.removeCallbacks(it) }
-        countDownTimer?.cancel()
 
         partida.aciertos = score
         partida.errores = (partida.rondas - score)
@@ -198,7 +180,6 @@ class GameActivity_ds : AppCompatActivity() {
         val intent = Intent(this, GameOverActivity::class.java)
         intent.putExtra("JUGADOR", jugador)
         intent.putExtra("PARTIDA", partida)
-        onPause()
         startActivity(intent)
 
         btnNextRound.text = "FINALIZAR"
@@ -217,7 +198,7 @@ class GameActivity_ds : AppCompatActivity() {
                 val secondsRemaining = millisUntilFinished / 1000
                 labelCuentaAtras.text = secondsRemaining.toString()
 
-                if (secondsRemaining <= 5) {
+                if (secondsRemaining <= 10) {
                     labelCuentaAtras.setTextColor(ContextCompat.getColor(this@GameActivity_ds, R.color.state_error))
                 } else {
                     labelCuentaAtras.setTextColor(ContextCompat.getColor(this@GameActivity_ds, R.color.faded_gold))
@@ -226,20 +207,12 @@ class GameActivity_ds : AppCompatActivity() {
 
             override fun onFinish() {
                 labelCuentaAtras.text = "0"
-
                 if (!isAnswered) {
-                    isAnswered = true
-                    countDownTimer?.cancel()
-                    endGame()
+                    allButtons.forEach { it.isEnabled = false }
+                    onAnswerSelected(allButtons[0])
                 }
             }
-        }.start()
-    }
 
-    override fun onPause() {
-        super.onPause()
-        if (this::mediaPlayer.isInitialized && mediaPlayer.isPlaying) {
-            mediaPlayer.pause()
-        }
+        }.start()
     }
 }
