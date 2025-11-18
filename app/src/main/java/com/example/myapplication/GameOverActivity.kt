@@ -7,10 +7,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Date
 
 class GameOverActivity : AppCompatActivity() {
-
     private lateinit var jugador: Jugador
     private lateinit var partida: UserGameData
 
@@ -44,6 +42,18 @@ class GameOverActivity : AppCompatActivity() {
         val secs = ((diffMillis / 1000) % 60).toInt()
 
         tvTiempo.text = "${mins}m ${secs}s"
+        val partidaActual = UserGameData(
+            partida.rondas,
+            partida.dificultad,
+            partida.aciertos,
+            partida.errores,
+            partida.fechaHoraInicio,
+            partida.fechaHoraFin,
+            partida.gameTime
+        )
+        val jugadorActual = Jugador(jugador.nombre, jugador.edad, partidaActual)
+        jugadores.add(jugadorActual)
+        FilesManager.saveFile(this, jugadores)
 
         btnRePlay.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
