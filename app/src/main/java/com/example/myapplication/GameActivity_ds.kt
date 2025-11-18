@@ -39,6 +39,9 @@ class GameActivity_ds : AppCompatActivity() {
     private var countDownTimer: android.os.CountDownTimer? = null
     private val ROUND_TIME_SECONDS: Long = 10
 
+    private var nextQuestionRunnable: Runnable? = null
+    private val handler = Handler(Looper.getMainLooper())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game_activityds)
@@ -77,9 +80,12 @@ class GameActivity_ds : AppCompatActivity() {
 
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         jugador = (intent.getSerializableExtra("JUGADOR") as? Jugador)!!
-        @Suppress("DEPRECATION", "UNCHECKED_CAST")
-        partida = (intent.getSerializableExtra("PARTIDA") as? UserGameData)!!
-        val totalRondas = partida?.rondas ?: allQuestions.size
+
+        val partidaActual = jugador.partidas.lastOrNull()
+        partida = partidaActual!!
+
+        val rawRondas = partida.rondas
+        val totalRondas = rawRondas.coerceIn(1, allQuestions.size)
 
         gameQuestions = allQuestions.shuffled().take(totalRondas)
         labelNumTotalRondas.text = totalRondas.toString()
@@ -99,6 +105,9 @@ class GameActivity_ds : AppCompatActivity() {
     }
 
     private fun loadQuestion() {
+        nextQuestionRunnable?.let { handler.removeCallbacks(it) }
+        countDownTimer?.cancel()
+
         if (currentQuestionIndex >= gameQuestions.size) {
             endGame()
             return
@@ -107,6 +116,7 @@ class GameActivity_ds : AppCompatActivity() {
         val question = gameQuestions[currentQuestionIndex]
         labelNumRonda.text = (currentQuestionIndex + 1).toString()
         labelTextoPregunta.text = question.enunciado_es
+
 
         // 1. Resetear contenedores
         allContainers.forEach { container ->
@@ -163,21 +173,23 @@ class GameActivity_ds : AppCompatActivity() {
 
         btnNextRound.text = if (correct) "¡CORRECTO! (Avanzando...)" else "Put these foolish ambitions to rest)"
 
-        Handler(Looper.getMainLooper()).postDelayed({
-
-            currentQuestionIndex++
-
-            if (currentQuestionIndex >= gameQuestions.size) {
-                endGame()
-            } else {
-                loadQuestion()
+        nextQuestionRunnable = Runnable {
+            if (!isFinishing) {
+                currentQuestionIndex++
+                if (currentQuestionIndex >= gameQuestions.size) {
+                    endGame()
+                } else {
+                    loadQuestion()
+                }
             }
-
-        }, 3000)
+        }
+        handler.postDelayed(nextQuestionRunnable!!, 3000)
 
     }
 
     private fun endGame() {
+        nextQuestionRunnable?.let { handler.removeCallbacks(it) }
+        countDownTimer?.cancel()
 
         partida.aciertos = score
         partida.errores = (partida.rondas - score)
@@ -186,6 +198,7 @@ class GameActivity_ds : AppCompatActivity() {
         val intent = Intent(this, GameOverActivity::class.java)
         intent.putExtra("JUGADOR", jugador)
         intent.putExtra("PARTIDA", partida)
+        onPause()
         startActivity(intent)
 
         btnNextRound.text = "FINALIZAR"
@@ -221,5 +234,12 @@ class GameActivity_ds : AppCompatActivity() {
                 }
             }
         }.start()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (this::mediaPlayer.isInitialized && mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
     }
 }

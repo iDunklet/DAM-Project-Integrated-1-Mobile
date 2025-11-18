@@ -73,14 +73,18 @@ class GameActivity_2 : AppCompatActivity() {
 
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         jugador = (intent.getSerializableExtra("JUGADOR") as? Jugador)!!
-        @Suppress("DEPRECATION", "UNCHECKED_CAST")
-        partida = (intent.getSerializableExtra("PARTIDA") as? UserGameData)!!
         //val totalRondas = partida?.rondas ?: allQuestions.size
 
-        if (this.partida.dificultad == 1) {
+        val partidaActual = jugador.partidas.lastOrNull()
+        if (partidaActual == null) {
             allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
         } else {
-            allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel2.json")
+            partida = partidaActual
+            allQuestions = if (partidaActual.dificultad == 1) {
+                PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
+            } else {
+                PreguntaJuego.loadQuestionsFromJson(this, "nivel2.json")
+            }
         }
 
         val rawRondas = partida.rondas
@@ -172,15 +176,17 @@ class GameActivity_2 : AppCompatActivity() {
 
         val intent = Intent(this, GameOverActivity::class.java)
         intent.putExtra("JUGADOR", jugador)
-        intent.putExtra("PARTIDA", partida)
+        onPause()
         startActivity(intent)
 
         btnNextRound.text = "FINALIZAR"
         btnNextRound.setOnClickListener { finish() }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mediaPlayer.release()
+    override fun onPause() {
+        super.onPause()
+        if (this::mediaPlayer.isInitialized && mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
     }
 }

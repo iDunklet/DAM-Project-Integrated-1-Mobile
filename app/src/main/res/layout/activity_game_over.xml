@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="@string/txtNombre"
             android:textColor="@color/white"
-            android:textSize="75sp" />
+            android:textSize="65sp" />
 
         <TextView
             android:id="@+id/labelJugador"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@color/white"
-            android:textSize="75sp" />
+            android:textSize="65sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:text="@string/txtAciertos"
             android:textColor="@color/white"
-            android:textSize="75sp" />
+            android:textSize="65sp" />
 
         <TextView
             android:id="@+id/labelAciertos"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@color/white"
-            android:textSize="75sp" />
+            android:textSize="65sp" />
 
     </LinearLayout>
 
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:text="@string/txtErrores"
             android:textColor="@color/white"
-            android:textSize="75sp" />
+            android:textSize="65sp" />
 
         <TextView
             android:id="@+id/labelErrores"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@color/white"
-            android:textSize="75sp" />
+            android:textSize="65sp" />
 
     </LinearLayout>
 
@@ -105,14 +105,15 @@
         android:layout_column="0"
         android:layout_marginStart="60dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="VisualLintBounds">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtTiempo"
             android:textColor="@color/blanco"
-            android:textSize="75sp" />
+            android:textSize="65sp" />
 
         <TextView
             android:id="@+id/labelTiempo"
@@ -120,7 +121,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@color/white"
-            android:textSize="75sp" />
+            android:textSize="65sp" />
 
     </LinearLayout>
 
@@ -129,9 +130,10 @@
         android:layout_height="200dp"
         android:layout_row="5"
         android:layout_column="0"
-        android:layout_gravity="start|bottom"
+        android:layout_gravity="start|center"
         android:contentDescription="@string/little_shapes"
-        android:src="@drawable/little_shapes" />
+        android:src="@drawable/little_shapes"
+        tools:ignore="VisualLintBounds" />
 
     <Button
         android:id="@+id/btnExit"
@@ -143,18 +145,20 @@
         android:background="@drawable/boton_rojo"
         android:text="@string/exit"
         android:textSize="50sp"
-        app:backgroundTint="@null" />
+        app:backgroundTint="@null"
+        tools:ignore="VisualLintBounds" />
 
     <Button
-        android:id="@+id/btnStart"
+        android:id="@+id/btnTryAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="5"
         android:layout_column="1"
-        android:layout_gravity="end|bottom"
+        android:layout_gravity="end|center"
         android:background="@drawable/boton_verde"
         android:text="@string/playAgain"
         android:textSize="66sp"
-        app:backgroundTint="@null" />
+        app:backgroundTint="@null"
+        tools:ignore="VisualLintBounds" />
 
 </GridLayout>

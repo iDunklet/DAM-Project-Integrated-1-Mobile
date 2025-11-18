@@ -85,10 +85,6 @@ class RegisterActivity : AppCompatActivity() {
         btnAceptar.setOnClickListener {
             if (validateInputs(newPlayerName, newPlayerAge)) {
 
-                 val nuevoJugador = Jugador(
-                     nombre = newPlayerName.text.toString(),
-                     edad = newPlayerAge.text.toString().toInt()
-                 )
 
                 val nuevaPartida = UserGameData(
                     rondas = numeroRondas,
@@ -99,20 +95,24 @@ class RegisterActivity : AppCompatActivity() {
                     fechaHoraFin = null,
                     gameTime = 0
                 )
+                val nuevoJugador = Jugador(
+                    nombre = newPlayerName.text.toString(),
+                    edad = newPlayerAge.text.toString().toInt(),
+                    partidas = mutableListOf()
+                )
+                nuevoJugador.partidas.add(nuevaPartida)
 
                 when (nuevaPartida.dificultad)
                 {
                     1, 2 -> {
                     val intent = Intent(this, GameActivity_2::class.java)
                     intent.putExtra("JUGADOR", nuevoJugador)
-                    intent.putExtra("PARTIDA", nuevaPartida)
                     onPause()
                     startActivity(intent)
                 }
                     3 -> {
                         val intent = Intent(this, GameActivity_ds::class.java)
                         intent.putExtra("JUGADOR", nuevoJugador)
-                        intent.putExtra("PARTIDA", nuevaPartida)
                         onPause()
                         startActivity(intent)
                     }

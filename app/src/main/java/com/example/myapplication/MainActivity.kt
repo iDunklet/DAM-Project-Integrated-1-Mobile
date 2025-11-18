@@ -27,14 +27,16 @@ class MainActivity : AppCompatActivity() {
         val btnExit = findViewById<Button>(R.id.btnExit)
         btnStart.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
-            onDestroy()
+            onPause()
         }
         btnExit.setOnClickListener {
             finishAffinity()
         }
     }
-    override fun onDestroy() {
-        super.onDestroy()
-        mediaPlayer.release()
+    override fun onPause() {
+        super.onPause()
+        if (this::mediaPlayer.isInitialized && mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
     }
 }
