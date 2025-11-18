@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Date
 
 class GameOverActivity : AppCompatActivity() {
-
     private lateinit var jugador: Jugador
     private lateinit var partida: UserGameData
 
@@ -21,34 +19,10 @@ class GameOverActivity : AppCompatActivity() {
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         partida = (intent.getSerializableExtra("PARTIDA") as? UserGameData)!!
 
-        /*
-        val partidas = listOf(
-            UserGameData(1, 1, 5, 1, 4, Date(1769820900000), Date(1769820960000)),
-            UserGameData(2, 2, 10, 1, 8, Date(1769820900000), Date(1769820960000)),
-            UserGameData(3, 3, 5, 2, 5, Date(1769820900000), Date(1769820960000))
-        )
-         */
-
-
         val tvJugador = findViewById<TextView>(R.id.labelJugador)
         val tvAciertos = findViewById<TextView>(R.id.labelAciertos)
         val tvErrores = findViewById<TextView>(R.id.labelErrores)
         val tvTiempo = findViewById<TextView>(R.id.labelTiempo)
-
-        /*
-        val partidaActual = partidas.find { it.idPartida == 2 }
-        partidaActual?.let {
-            val errores = it.rondas - it.aciertos
-            val tiempoMs = it.fechaHoraFin?.time?.minus(it.fechaHoraInicio.time)
-            val tiempoSegs = tiempoMs?.div(1000)
-
-            // tvJugador.text = "${it.idJugador}"
-            tvAciertos.text = "${it.aciertos}"
-            tvErrores.text = errores.toString()
-            tvTiempo.text = "$tiempoSegs segs"
-        }
-
-         */
 
         tvJugador.text = jugador.nombre
         tvAciertos.text = partida.aciertos.toString()
@@ -59,9 +33,17 @@ class GameOverActivity : AppCompatActivity() {
         val secs = ((diffMillis / 1000) % 60).toInt()
 
         tvTiempo.text = "${mins}m ${secs}s"
-
-
+        val partidaActual = UserGameData(
+            partida.rondas,
+            partida.dificultad,
+            partida.aciertos,
+            partida.errores,
+            partida.fechaHoraInicio,
+            partida.fechaHoraFin,
+            partida.gameTime
+        )
+        val jugadorActual = Jugador(jugador.nombre, jugador.edad, partidaActual)
+        jugadores.add(jugadorActual)
+        FilesManager.saveFile(this, jugadores)
     }
-
-
 }
