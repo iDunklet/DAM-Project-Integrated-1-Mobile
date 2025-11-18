@@ -35,6 +35,7 @@ class GameActivity_2 : AppCompatActivity() {
     private lateinit var partida: UserGameData
 
     private var countDownTimer: android.os.CountDownTimer? = null
+    private lateinit var allQuestions: List<PreguntaJuego>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,17 +68,20 @@ class GameActivity_2 : AppCompatActivity() {
         val btnBack: ImageButton = findViewById(R.id.IconBack)
         btnBack.setOnClickListener { finish() }
 
-
-
         gameMechanics = GameMechanics(this)
 
-        val allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
 
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         jugador = (intent.getSerializableExtra("JUGADOR") as? Jugador)!!
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         partida = (intent.getSerializableExtra("PARTIDA") as? UserGameData)!!
         //val totalRondas = partida?.rondas ?: allQuestions.size
+
+        if (this.partida.dificultad == 1) {
+            allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
+        } else {
+            allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel2.json")
+        }
 
         val rawRondas = partida.rondas
         val totalRondas = rawRondas.coerceIn(1, allQuestions.size)

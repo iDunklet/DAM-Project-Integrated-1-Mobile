@@ -95,7 +95,7 @@
     "categoria": "SHAPE",
     "enunciado_es": "¿Qué forma tiene la mayoría de los ladrillos?",
     "respuesta_correcta_en": "RECTANGLE",
-    "opciones_en": ["STAR", "RECTANGLE", "CUBE", "TRAPEZOID", "PENTAGON"]
+    "opciones_en": ["STAR", "RECTANGLE", "SQUARE", "OVAL", "PENTAGON"]
   },
   {
     "id": 9,
@@ -116,7 +116,7 @@
     "categoria": "SHAPE",
     "enunciado_es": "¿Qué forma tiene un huevo?",
     "respuesta_correcta_en": "OVAL",
-    "opciones_en": ["RECTANGLE", "CIRCLE", "OVAL", "DIAMOND", "HEART"]
+    "opciones_en": ["RECTANGLE", "CIRCLE", "OVAL", "DIAMOND", "PENTAGON"]
   },
   {
     "id": 18,
@@ -133,10 +133,215 @@
     "opciones_en": ["SQUARE", "DIAMOND", "HEXAGON", "OCTAGON", "CIRCLE"]
   },
   {
-    "id": 20,
+    "id": 21,
+    "categoria": "COLOR",
+    "enunciado_es": "Selecciona el color de una naranja.",
+    "respuesta_correcta_en": "ORANGE",
+    "opciones_en": ["BLUE", "GREEN", "ORANGE", "PURPLE", "BLACK"]
+  },
+  {
+    "id": 22,
+    "categoria": "COLOR",
+    "enunciado_es": "¿De qué color es el pasto?",
+    "respuesta_correcta_en": "GREEN",
+    "opciones_en": ["RED", "GREEN", "YELLOW", "BLUE", "WHITE"]
+  },
+  {
+    "id": 23,
+    "categoria": "COLOR",
+    "enunciado_es": "Elige el color de un gato negro.",
+    "respuesta_correcta_en": "BLACK",
+    "opciones_en": ["PINK", "BROWN", "WHITE", "BLACK", "GREEN"]
+  },
+  {
+    "id": 24,
+    "categoria": "COLOR",
+    "enunciado_es": "Selecciona el color del sol.",
+    "respuesta_correcta_en": "YELLOW",
+    "opciones_en": ["BLUE", "PURPLE", "GREY", "YELLOW", "GREEN"]
+  },
+  {
+    "id": 25,
+    "categoria": "COLOR",
+    "enunciado_es": "¿Qué color tiene una nube de día?",
+    "respuesta_correcta_en": "WHITE",
+    "opciones_en": ["BLACK", "WHITE", "RED", "YELLOW", "BLUE"]
+  },
+  {
+    "id": 26,
+    "categoria": "COLOR",
+    "enunciado_es": "Selecciona el color de una fresa.",
+    "respuesta_correcta_en": "RED",
+    "opciones_en": ["RED", "BLUE", "BROWN", "PURPLE", "GREY"]
+  },
+  {
+    "id": 27,
+    "categoria": "COLOR",
+    "enunciado_es": "Elige el color del chocolate.",
+    "respuesta_correcta_en": "BROWN",
+    "opciones_en": ["GREEN", "BLUE", "BROWN", "WHITE", "ORANGE"]
+  },
+  {
+    "id": 28,
+    "categoria": "COLOR",
+    "enunciado_es": "¿De qué color es un limón?",
+    "respuesta_correcta_en": "YELLOW",
+    "opciones_en": ["YELLOW", "PURPLE", "BLACK", "GREEN", "BLUE"]
+  },
+  {
+    "id": 29,
+    "categoria": "COLOR",
+    "enunciado_es": "Selecciona el color del mar.",
+    "respuesta_correcta_en": "BLUE",
+    "opciones_en": ["RED", "BLUE", "GREY", "PINK", "ORANGE"]
+  },
+  {
+    "id": 30,
+    "categoria": "COLOR",
+    "enunciado_es": "Elige el color de una uva morada.",
+    "respuesta_correcta_en": "PURPLE",
+    "opciones_en": ["ORANGE", "PURPLE", "BLACK", "RED", "WHITE"]
+  },
+
+  {
+    "id": 31,
+    "categoria": "NUMBER",
+    "enunciado_es": "Selecciona el número que corresponde a cuatro.",
+    "respuesta_correcta_en": "FOUR",
+    "opciones_en": ["TWO", "FIVE", "FOUR", "ONE", "SIX"]
+  },
+  {
+    "id": 32,
+    "categoria": "NUMBER",
+    "enunciado_es": "¿Cuántas patas tiene un gato?",
+    "respuesta_correcta_en": "FOUR",
+    "opciones_en": ["TWO", "THREE", "FOUR", "FIVE", "SIX"]
+  },
+  {
+    "id": 33,
+    "categoria": "NUMBER",
+    "enunciado_es": "Selecciona el número que representa uno.",
+    "respuesta_correcta_en": "ONE",
+    "opciones_en": ["THREE", "ONE", "TWO", "FOUR", "TEN"]
+  },
+  {
+    "id": 34,
+    "categoria": "NUMBER",
+    "enunciado_es": "¿Cuántos ojos tienes?",
+    "respuesta_correcta_en": "TWO",
+    "opciones_en": ["THREE", "FOUR", "ONE", "TWO", "FIVE"]
+  },
+  {
+    "id": 35,
+    "categoria": "NUMBER",
+    "enunciado_es": "Selecciona el número más pequeño.",
+    "respuesta_correcta_en": "ONE",
+    "opciones_en": ["FIVE", "TWO", "FOUR", "ONE", "THREE"]
+  },
+  {
+    "id": 36,
+    "categoria": "NUMBER",
+    "enunciado_es": "Elige el número después del tres.",
+    "respuesta_correcta_en": "FOUR",
+    "opciones_en": ["TWO", "FIVE", "ONE", "FOUR", "THREE"]
+  },
+  {
+    "id": 37,
+    "categoria": "NUMBER",
+    "enunciado_es": "Selecciona el número antes del cinco.",
+    "respuesta_correcta_en": "FOUR",
+    "opciones_en": ["ONE", "FOUR", "SEVEN", "TEN", "THREE"]
+  },
+  {
+    "id": 38,
+    "categoria": "NUMBER",
+    "enunciado_es": "¿Cuántos dedos tiene una mano?",
+    "respuesta_correcta_en": "FIVE",
+    "opciones_en": ["THREE", "FIVE", "TWO", "ONE", "SIX"]
+  },
+  {
+    "id": 39,
+    "categoria": "NUMBER",
+    "enunciado_es": "Elige el número entre cuatro y seis.",
+    "respuesta_correcta_en": "FIVE",
+    "opciones_en": ["THREE", "FIVE", "TWO", "SEVEN", "EIGHT"]
+  },
+  {
+    "id": 40,
+    "categoria": "NUMBER",
+    "enunciado_es": "Selecciona el número mayor.",
+    "respuesta_correcta_en": "TEN",
+    "opciones_en": ["TWO", "FIVE", "TEN", "FOUR", "ONE"]
+  },
+
+  {
+    "id": 41,
     "categoria": "SHAPE",
-    "enunciado_es": "Una forma con puntas usada para representar el sol.",
+    "enunciado_es": "¿Qué forma tiene una pelota?",
+    "respuesta_correcta_en": "CIRCLE",
+    "opciones_en": ["SQUARE", "TRIANGLE", "CIRCLE", "OVAL", "STAR"]
+  },
+  {
+    "id": 42,
+    "categoria": "SHAPE",
+    "enunciado_es": "Selecciona la figura con tres puntas.",
+    "respuesta_correcta_en": "TRIANGLE",
+    "opciones_en": ["CIRCLE", "TRIANGLE", "SQUARE", "PENTAGON", "OVAL"]
+  },
+  {
+    "id": 43,
+    "categoria": "SHAPE",
+    "enunciado_es": "¿Qué forma tiene una puerta?",
+    "respuesta_correcta_en": "RECTANGLE",
+    "opciones_en": ["CIRCLE", "STAR", "RECTANGLE", "OVAL", "HEXAGON"]
+  },
+  {
+    "id": 44,
+    "categoria": "SHAPE",
+    "enunciado_es": "Elige la figura que parece una caja.",
+    "respuesta_correcta_en": "CUBE",
+    "opciones_en": ["CUBE", "OVAL", "CIRCLE", "STAR", "TRIANGLE"]
+  },
+  {
+    "id": 45,
+    "categoria": "SHAPE",
+    "enunciado_es": "Selecciona la figura con cinco lados.",
+    "respuesta_correcta_en": "PENTAGON",
+    "opciones_en": ["HEXAGON", "PENTAGON", "SQUARE", "TRIANGLE", "CIRCLE"]
+  },
+  {
+    "id": 46,
+    "categoria": "SHAPE",
+    "enunciado_es": "¿Qué forma tiene un huevo?",
+    "respuesta_correcta_en": "OVAL",
+    "opciones_en": ["RECTANGLE", "CIRCLE", "OVAL", "DIAMOND", "HEART"]
+  },
+  {
+    "id": 47,
+    "categoria": "SHAPE",
+    "enunciado_es": "Selecciona la figura con cuatro lados.",
+    "respuesta_correcta_en": "SQUARE",
+    "opciones_en": ["SQUARE", "CIRCLE", "TRIANGLE", "STAR", "OVAL"]
+  },
+  {
+    "id": 48,
+    "categoria": "SHAPE",
+    "enunciado_es": "¿Qué figura tiene ocho lados?",
+    "respuesta_correcta_en": "OCTAGON",
+    "opciones_en": ["HEXAGON", "CIRCLE", "OCTAGON", "TRIANGLE", "SQUARE"]
+  },
+  {
+    "id": 49,
+    "categoria": "SHAPE",
+    "enunciado_es": "Selecciona la figura que parece una estrella.",
     "respuesta_correcta_en": "STAR",
-    "opciones_en": ["OVAL", "STAR", "CIRCLE", "TRIANGLE", "RECTANGLE"]
+    "opciones_en": ["SQUARE", "STAR", "CIRCLE", "TRIANGLE", "RECTANGLE"]
+  },
+  {
+    "id": 50,
+    "categoria": "SHAPE",
+    "enunciado_es": "Elige la figura con seis lados.",
+    "respuesta_correcta_en": "HEXAGON",
+    "opciones_en": ["HEXAGON", "CIRCLE", "OVAL", "SQUARE", "TRIANGLE"]
   }
 ]

@@ -220,8 +220,8 @@
 
     <Button
         android:id="@+id/buttonRegisterAceptar"
-        android:layout_width="280dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/faded_gold_button"
         android:text="ACEPTAR"
         android:textSize="25sp"

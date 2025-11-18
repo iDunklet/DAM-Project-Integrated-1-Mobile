@@ -29,6 +29,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var btnNivel1: Button
     private lateinit var btnNivel2: Button
+    private lateinit var btnNivel3: Button
     private lateinit var botonesNivel: List<Button>
 
 
@@ -54,7 +55,8 @@ class RegisterActivity : AppCompatActivity() {
 
         btnNivel1 = findViewById(R.id.buttonNivel1)
         btnNivel2 = findViewById(R.id.buttonNivel2)
-        botonesNivel = listOf(btnNivel1, btnNivel2)
+        btnNivel3 = findViewById(R.id.buttonNivel3)
+        botonesNivel = listOf(btnNivel1, btnNivel2,btnNivel3)
 
 
         // Listeners RONDAS
@@ -74,6 +76,9 @@ class RegisterActivity : AppCompatActivity() {
         }
         btnNivel2.setOnClickListener {
             handleLevelSelection(it as Button, 2)
+        }
+        btnNivel3.setOnClickListener {
+            handleLevelSelection(it as Button, 3)
         }
 
 
@@ -95,11 +100,23 @@ class RegisterActivity : AppCompatActivity() {
                     gameTime = 0
                 )
 
-                val intent = Intent(this, GameActivity_ds::class.java)
-                intent.putExtra("JUGADOR", nuevoJugador)
-                intent.putExtra("PARTIDA", nuevaPartida)
-                onPause()
-                startActivity(intent)
+                when (nuevaPartida.dificultad)
+                {
+                    1, 2 -> {
+                    val intent = Intent(this, GameActivity_2::class.java)
+                    intent.putExtra("JUGADOR", nuevoJugador)
+                    intent.putExtra("PARTIDA", nuevaPartida)
+                    onPause()
+                    startActivity(intent)
+                }
+                    3 -> {
+                        val intent = Intent(this, GameActivity_ds::class.java)
+                        intent.putExtra("JUGADOR", nuevoJugador)
+                        intent.putExtra("PARTIDA", nuevaPartida)
+                        onPause()
+                        startActivity(intent)
+                    }
+                }
 
             }
         }

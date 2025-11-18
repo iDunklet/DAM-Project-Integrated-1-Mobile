@@ -37,7 +37,7 @@ class GameActivity_ds : AppCompatActivity() {
     private lateinit var partida: UserGameData
 
     private var countDownTimer: android.os.CountDownTimer? = null
-    private val ROUND_TIME_SECONDS: Long = 30
+    private val ROUND_TIME_SECONDS: Long = 10
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +73,7 @@ class GameActivity_ds : AppCompatActivity() {
 
         gameMechanics = GameMechanics(this)
 
-        val allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel1.json")
+        val allQuestions = PreguntaJuego.loadQuestionsFromJson(this, "nivel3.json")
 
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         jugador = (intent.getSerializableExtra("JUGADOR") as? Jugador)!!
@@ -149,14 +149,19 @@ class GameActivity_ds : AppCompatActivity() {
             allContainers,
             question, this)
 
-        if (correct) score++
+        if (correct) {
+            score++
+        } else {
+            endGame()
+        }
+
 
         allButtons.forEach { it.isEnabled = false }
 
 
         btnNextRound.visibility = View.VISIBLE
 
-        btnNextRound.text = if (correct) "¡CORRECTO! (Avanzando...)" else "FALLO. (Avanzando...)"
+        btnNextRound.text = if (correct) "¡CORRECTO! (Avanzando...)" else "Put these foolish ambitions to rest)"
 
         Handler(Looper.getMainLooper()).postDelayed({
 
@@ -199,7 +204,7 @@ class GameActivity_ds : AppCompatActivity() {
                 val secondsRemaining = millisUntilFinished / 1000
                 labelCuentaAtras.text = secondsRemaining.toString()
 
-                if (secondsRemaining <= 10) {
+                if (secondsRemaining <= 5) {
                     labelCuentaAtras.setTextColor(ContextCompat.getColor(this@GameActivity_ds, R.color.state_error))
                 } else {
                     labelCuentaAtras.setTextColor(ContextCompat.getColor(this@GameActivity_ds, R.color.faded_gold))
@@ -208,12 +213,13 @@ class GameActivity_ds : AppCompatActivity() {
 
             override fun onFinish() {
                 labelCuentaAtras.text = "0"
+
                 if (!isAnswered) {
-                    allButtons.forEach { it.isEnabled = false }
-                    onAnswerSelected(allButtons[0])
+                    isAnswered = true
+                    countDownTimer?.cancel()
+                    endGame()
                 }
             }
-
         }.start()
     }
 }
