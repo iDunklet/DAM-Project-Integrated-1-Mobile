@@ -60,6 +60,5 @@ class GameOverActivity : AppCompatActivity() {
         btnExit.setOnClickListener {
             finishAffinity()
         }
-
     }
 }
