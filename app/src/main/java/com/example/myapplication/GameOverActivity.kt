@@ -49,6 +49,7 @@ class GameOverActivity : AppCompatActivity() {
             partida.fechaHoraFin,
             partida.gameTime
         )
+        jugadores = FilesManager.readFile(this)
         agregarPartida(jugador.nombre, jugador.edad, partidaCompletada)
         FilesManager.saveFile(this, jugadores)
 

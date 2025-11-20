@@ -38,7 +38,6 @@ class RegisterActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.register_activity)
 
-        jugadores = FilesManager.readFile(this)
         mediaPlayer = MediaPlayer.create(this, R.raw.school)
         mediaPlayer.start()
 
@@ -143,7 +142,6 @@ class RegisterActivity : AppCompatActivity() {
                                           )
     }
 
-
     private fun updateDataVariables(target: Int, value: Int) {
         if (target == TARGET_ROUNDS) {
             numeroRondas = value
@@ -153,7 +151,6 @@ class RegisterActivity : AppCompatActivity() {
             Log.d("RegisterActivity", "Dificultad seleccionada: $nivelDificultad")
         }
     }
-
 
     private fun validateInputs(nameEt: EditText, ageEt: EditText): Boolean {
         if (nameEt.text.isNullOrBlank()) {
