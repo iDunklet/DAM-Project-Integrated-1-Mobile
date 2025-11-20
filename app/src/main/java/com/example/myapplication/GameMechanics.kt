@@ -36,7 +36,7 @@ class GameMechanics(private val context: Context) {
         containers: List<FrameLayout>,
         question: PreguntaJuego
     ) {
-        val shuffledOptions = question.opcionesEn.shuffled()
+        val shuffledOptions = question.opcionesEn?.shuffled().orEmpty()
         val shuffledColors = randomColors.shuffled()
 
         buttons.zip(shuffledOptions).forEach { (button, option) ->

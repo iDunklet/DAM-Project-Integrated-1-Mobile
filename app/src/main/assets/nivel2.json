@@ -2,206 +2,206 @@
   {
     "id": 101,
     "categoria": "COLOR",
-    "enunciado_es": "¿Qué color se obtiene al mezclar rojo y blanco?",
-    "respuesta_correcta_en": "PINK",
-    "opciones_en": ["PINK", "ORANGE", "BROWN", "PURPLE", "GREY"]
+    "enunciadoEs": "¿Qué color se obtiene al mezclar rojo y blanco?",
+    "respuestaCorrectaEn": "PINK",
+    "opcionesEn": ["PINK", "ORANGE", "BROWN", "PURPLE", "GREY"]
   },
   {
     "id": 102,
     "categoria": "COLOR",
-    "enunciado_es": "Selecciona el color que es más oscuro.",
-    "respuesta_correcta_en": "BLACK",
-    "opciones_en": ["YELLOW", "BLUE", "BLACK", "WHITE", "GREEN"]
+    "enunciadoEs": "Selecciona el color que es más oscuro.",
+    "respuestaCorrectaEn": "BLACK",
+    "opcionesEn": ["YELLOW", "BLUE", "BLACK", "WHITE", "GREEN"]
   },
   {
     "id": 103,
     "categoria": "COLOR",
-    "enunciado_es": "¿Qué color tiene una sandía por dentro?",
-    "respuesta_correcta_en": "RED",
-    "opciones_en": ["GREEN", "RED", "BLUE", "YELLOW", "WHITE"]
+    "enunciadoEs": "¿Qué color tiene una sandía por dentro?",
+    "respuestaCorrectaEn": "RED",
+    "opcionesEn": ["GREEN", "RED", "BLUE", "YELLOW", "WHITE"]
   },
   {
     "id": 104,
     "categoria": "COLOR",
-    "enunciado_es": "Selecciona el color de un árbol en primavera.",
-    "respuesta_correcta_en": "GREEN",
-    "opciones_en": ["RED", "PURPLE", "GREEN", "ORANGE", "BLACK"]
+    "enunciadoEs": "Selecciona el color de un árbol en primavera.",
+    "respuestaCorrectaEn": "GREEN",
+    "opcionesEn": ["RED", "PURPLE", "GREEN", "ORANGE", "BLACK"]
   },
   {
     "id": 105,
     "categoria": "COLOR",
-    "enunciado_es": "¿De qué color es una berenjena?",
-    "respuesta_correcta_en": "PURPLE",
-    "opciones_en": ["BLUE", "PURPLE", "BLACK", "GREEN", "YELLOW"]
+    "enunciadoEs": "¿De qué color es una berenjena?",
+    "respuestaCorrectaEn": "PURPLE",
+    "opcionesEn": ["BLUE", "PURPLE", "BLACK", "GREEN", "YELLOW"]
   },
   {
     "id": 106,
     "categoria": "COLOR",
-    "enunciado_es": "Selecciona el color de un flamenco.",
-    "respuesta_correcta_en": "PINK",
-    "opciones_en": ["RED", "WHITE", "PINK", "YELLOW", "GREY"]
+    "enunciadoEs": "Selecciona el color de un flamenco.",
+    "respuestaCorrectaEn": "PINK",
+    "opcionesEn": ["RED", "WHITE", "PINK", "YELLOW", "GREY"]
   },
   {
     "id": 107,
     "categoria": "COLOR",
-    "enunciado_es": "¿Qué color se obtiene al mezclar azul y rojo?",
-    "respuesta_correcta_en": "PURPLE",
-    "opciones_en": ["ORANGE", "GREEN", "PURPLE", "PINK", "WHITE"]
+    "enunciadoEs": "¿Qué color se obtiene al mezclar azul y rojo?",
+    "respuestaCorrectaEn": "PURPLE",
+    "opcionesEn": ["ORANGE", "GREEN", "PURPLE", "PINK", "WHITE"]
   },
   {
     "id": 108,
     "categoria": "COLOR",
-    "enunciado_es": "Elige el color de un oso panda.",
-    "respuesta_correcta_en": "BLACK",
-    "opciones_en": ["BLACK", "ORANGE", "YELLOW", "BLUE", "PINK"]
+    "enunciadoEs": "Elige el color de un oso panda.",
+    "respuestaCorrectaEn": "BLACK",
+    "opcionesEn": ["BLACK", "ORANGE", "YELLOW", "BLUE", "PINK"]
   },
 
   {
     "id": 109,
     "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número que viene justo después del siete.",
-    "respuesta_correcta_en": "EIGHT",
-    "opciones_en": ["NINE", "TEN", "EIGHT", "SIX", "SEVEN"]
+    "enunciadoEs": "Selecciona el número que viene justo después del siete.",
+    "respuestaCorrectaEn": "EIGHT",
+    "opcionesEn": ["NINE", "TEN", "EIGHT", "SIX", "SEVEN"]
   },
   {
     "id": 110,
     "categoria": "NUMBER",
-    "enunciado_es": "Si tienes tres manzanas y te dan una más, ¿cuántas tienes?",
-    "respuesta_correcta_en": "FOUR",
-    "opciones_en": ["FOUR", "TWO", "FIVE", "ONE", "THREE"]
+    "enunciadoEs": "Si tienes tres manzanas y te dan una más, ¿cuántas tienes?",
+    "respuestaCorrectaEn": "FOUR",
+    "opcionesEn": ["FOUR", "TWO", "FIVE", "ONE", "THREE"]
   },
   {
     "id": 111,
     "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número mayor.",
-    "respuesta_correcta_en": "NINE",
-    "opciones_en": ["TWO", "SEVEN", "NINE", "FIVE", "FOUR"]
+    "enunciadoEs": "Selecciona el número mayor.",
+    "respuestaCorrectaEn": "NINE",
+    "opcionesEn": ["TWO", "SEVEN", "NINE", "FIVE", "FOUR"]
   },
   {
     "id": 112,
     "categoria": "NUMBER",
-    "enunciado_es": "¿Cuántos lados tiene un triángulo?",
-    "respuesta_correcta_en": "THREE",
-    "opciones_en": ["FOUR", "THREE", "FIVE", "TWO", "SIX"]
+    "enunciadoEs": "¿Cuántos lados tiene un triángulo?",
+    "respuestaCorrectaEn": "THREE",
+    "opcionesEn": ["FOUR", "THREE", "FIVE", "TWO", "SIX"]
   },
   {
     "id": 113,
     "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número que es menor.",
-    "respuesta_correcta_en": "ONE",
-    "opciones_en": ["THREE", "ONE", "FIVE", "SEVEN", "TEN"]
+    "enunciadoEs": "Selecciona el número que es menor.",
+    "respuestaCorrectaEn": "ONE",
+    "opcionesEn": ["THREE", "ONE", "FIVE", "SEVEN", "TEN"]
   },
   {
     "id": 114,
     "categoria": "NUMBER",
-    "enunciado_es": "Si tienes cinco caramelos y comes uno, ¿cuántos quedan?",
-    "respuesta_correcta_en": "FOUR",
-    "opciones_en": ["FOUR", "TWO", "ONE", "THREE", "FIVE"]
+    "enunciadoEs": "Si tienes cinco caramelos y comes uno, ¿cuántos quedan?",
+    "respuestaCorrectaEn": "FOUR",
+    "opcionesEn": ["FOUR", "TWO", "ONE", "THREE", "FIVE"]
   },
   {
     "id": 115,
     "categoria": "NUMBER",
-    "enunciado_es": "¿Cuántos lados tiene un cuadrado?",
-    "respuesta_correcta_en": "FOUR",
-    "opciones_en": ["THREE", "FOUR", "FIVE", "SIX", "TWO"]
+    "enunciadoEs": "¿Cuántos lados tiene un cuadrado?",
+    "respuestaCorrectaEn": "FOUR",
+    "opcionesEn": ["THREE", "FOUR", "FIVE", "SIX", "TWO"]
   },
   {
     "id": 116,
     "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número que representa la cantidad de patas de una mesa.",
-    "respuesta_correcta_en": "FOUR",
-    "opciones_en": ["TWO", "THREE", "FOUR", "FIVE", "SIX"]
+    "enunciadoEs": "Selecciona el número que representa la cantidad de patas de una mesa.",
+    "respuestaCorrectaEn": "FOUR",
+    "opcionesEn": ["TWO", "THREE", "FOUR", "FIVE", "SIX"]
   },
   {
     "id": 117,
     "categoria": "NUMBER",
-    "enunciado_es": "¿Cuántos dedos tienes en un pie?",
-    "respuesta_correcta_en": "FIVE",
-    "opciones_en": ["THREE", "FOUR", "FIVE", "SIX", "TWO"]
+    "enunciadoEs": "¿Cuántos dedos tienes en un pie?",
+    "respuestaCorrectaEn": "FIVE",
+    "opcionesEn": ["THREE", "FOUR", "FIVE", "SIX", "TWO"]
   },
   {
     "id": 118,
     "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número que viene antes del diez.",
-    "respuesta_correcta_en": "NINE",
-    "opciones_en": ["EIGHT", "NINE", "SEVEN", "SIX", "TEN"]
+    "enunciadoEs": "Selecciona el número que viene antes del diez.",
+    "respuestaCorrectaEn": "NINE",
+    "opcionesEn": ["EIGHT", "NINE", "SEVEN", "SIX", "TEN"]
   },
 
   {
     "id": 119,
     "categoria": "SHAPE",
-    "enunciado_es": "Selecciona la figura que tiene cuatro lados pero no todos iguales.",
-    "respuesta_correcta_en": "RECTANGLE",
-    "opciones_en": ["CIRCLE", "SQUARE", "RECTANGLE", "OVAL", "TRIANGLE"]
+    "enunciadoEs": "Selecciona la figura que tiene cuatro lados pero no todos iguales.",
+    "respuestaCorrectaEn": "RECTANGLE",
+    "opcionesEn": ["CIRCLE", "SQUARE", "RECTANGLE", "OVAL", "TRIANGLE"]
   },
   {
     "id": 120,
     "categoria": "SHAPE",
-    "enunciado_es": "¿Qué figura tiene forma de diamante?",
-    "respuesta_correcta_en": "DIAMOND",
-    "opciones_en": ["STAR", "DIAMOND", "CIRCLE", "OVAL", "PENTAGON"]
+    "enunciadoEs": "¿Qué figura tiene forma de diamante?",
+    "respuestaCorrectaEn": "DIAMOND",
+    "opcionesEn": ["STAR", "DIAMOND", "CIRCLE", "OVAL", "PENTAGON"]
   },
   {
     "id": 121,
     "categoria": "SHAPE",
-    "enunciado_es": "Selecciona la figura con cinco puntas.",
-    "respuesta_correcta_en": "STAR",
-    "opciones_en": ["STAR", "CIRCLE", "TRIANGLE", "HEXAGON", "SQUARE"]
+    "enunciadoEs": "Selecciona la figura con cinco puntas.",
+    "respuestaCorrectaEn": "STAR",
+    "opcionesEn": ["STAR", "CIRCLE", "TRIANGLE", "HEXAGON", "SQUARE"]
   },
   {
     "id": 122,
     "categoria": "SHAPE",
-    "enunciado_es": "¿Qué figura tiene forma de corazón?",
-    "respuesta_correcta_en": "HEART",
-    "opciones_en": ["CIRCLE", "HEART", "SQUARE", "STAR", "OVAL"]
+    "enunciadoEs": "¿Qué figura tiene forma de corazón?",
+    "respuestaCorrectaEn": "HEART",
+    "opcionesEn": ["CIRCLE", "HEART", "SQUARE", "STAR", "OVAL"]
   },
   {
     "id": 123,
     "categoria": "SHAPE",
-    "enunciado_es": "Selecciona la figura que parece un tubo o una lata.",
-    "respuesta_correcta_en": "CYLINDER",
-    "opciones_en": ["CUBE", "CIRCLE", "CYLINDER", "TRIANGLE", "RECTANGLE"]
+    "enunciadoEs": "Selecciona la figura que parece un tubo o una lata.",
+    "respuestaCorrectaEn": "CYLINDER",
+    "opcionesEn": ["CUBE", "CIRCLE", "CYLINDER", "TRIANGLE", "RECTANGLE"]
   },
   {
     "id": 124,
     "categoria": "SHAPE",
-    "enunciado_es": "¿Qué figura se parece a una pelota de playa?",
-    "respuesta_correcta_en": "SPHERE",
-    "opciones_en": ["CUBE", "SPHERE", "CIRCLE", "OVAL", "CONE"]
+    "enunciadoEs": "¿Qué figura se parece a una pelota de playa?",
+    "respuestaCorrectaEn": "SPHERE",
+    "opcionesEn": ["CUBE", "SPHERE", "CIRCLE", "OVAL", "CONE"]
   },
   {
     "id": 125,
     "categoria": "SHAPE",
-    "enunciado_es": "Selecciona la figura que tiene forma de punta o cono.",
-    "respuesta_correcta_en": "CONE",
-    "opciones_en": ["CIRCLE", "CONE", "SQUARE", "STAR", "RECTANGLE"]
+    "enunciadoEs": "Selecciona la figura que tiene forma de punta o cono.",
+    "respuestaCorrectaEn": "CONE",
+    "opcionesEn": ["CIRCLE", "CONE", "SQUARE", "STAR", "RECTANGLE"]
   },
   {
     "id": 126,
     "categoria": "SHAPE",
-    "enunciado_es": "¿Qué figura se parece a un dado?",
-    "respuesta_correcta_en": "CUBE",
-    "opciones_en": ["CUBE", "CIRCLE", "TRIANGLE", "SPHERE", "CONE"]
+    "enunciadoEs": "¿Qué figura se parece a un dado?",
+    "respuestaCorrectaEn": "CUBE",
+    "opcionesEn": ["CUBE", "CIRCLE", "TRIANGLE", "SPHERE", "CONE"]
   },
   {
     "id": 127,
     "categoria": "SHAPE",
-    "enunciado_es": "Selecciona la figura que tiene forma de un anillo.",
-    "respuesta_correcta_en": "CIRCLE",
-    "opciones_en": ["CONE", "STAR", "CIRCLE", "OVAL", "CUBE"]
+    "enunciadoEs": "Selecciona la figura que tiene forma de un anillo.",
+    "respuestaCorrectaEn": "CIRCLE",
+    "opcionesEn": ["CONE", "STAR", "CIRCLE", "OVAL", "CUBE"]
   },
   {
     "id": 128,
     "categoria": "SHAPE",
-    "enunciado_es": "¿Qué figura se parece a una ventana típica?",
-    "respuesta_correcta_en": "SQUARE",
-    "opciones_en": ["OVAL", "RECTANGLE", "SQUARE", "STAR", "CIRCLE"]
+    "enunciadoEs": "¿Qué figura se parece a una ventana típica?",
+    "respuestaCorrectaEn": "SQUARE",
+    "opcionesEn": ["OVAL", "RECTANGLE", "SQUARE", "STAR", "CIRCLE"]
   },
   {
     "id": 129,
     "categoria": "SHAPE",
-    "enunciado_es": "Selecciona la figura que tiene seis lados.",
-    "respuesta_correcta_en": "HEXAGON",
-    "opciones_en": ["HEXAGON", "CIRCLE", "TRIANGLE", "SQUARE", "OVAL"]
+    "enunciadoEs": "Selecciona la figura que tiene seis lados.",
+    "respuestaCorrectaEn": "HEXAGON",
+    "opcionesEn": ["HEXAGON", "CIRCLE", "TRIANGLE", "SQUARE", "OVAL"]
   }
 ]

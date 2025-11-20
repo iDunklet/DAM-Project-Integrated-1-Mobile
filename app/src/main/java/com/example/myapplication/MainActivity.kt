@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         val btnExit = findViewById<Button>(R.id.btnExit)
         btnStart.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
-            onPause()
         }
         btnExit.setOnClickListener {
             finishAffinity()

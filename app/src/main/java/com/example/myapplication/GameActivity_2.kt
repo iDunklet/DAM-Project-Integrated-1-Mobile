@@ -32,6 +32,7 @@ class GameActivity_2 : AppCompatActivity() {
 
     private lateinit var jugador: Jugador
     private lateinit var partida: UserGameData
+    private lateinit var partidaActual: UserGameData
 
     private var countDownTimer: android.os.CountDownTimer? = null
 
@@ -74,15 +75,13 @@ class GameActivity_2 : AppCompatActivity() {
 
         @Suppress("DEPRECATION", "UNCHECKED_CAST")
         jugador = (intent.getSerializableExtra("JUGADOR") as? Jugador)!!
-        @Suppress("DEPRECATION", "UNCHECKED_CAST")
-        partida = (intent.getSerializableExtra("PARTIDA") as? UserGameData)!!
-        //val totalRondas = partida?.rondas ?: allQuestions.size
 
+        partidaActual = jugador.partidas.lastOrNull()!!
+
+        partida = partidaActual
         val rawRondas = partida.rondas
         val totalRondas = rawRondas.coerceIn(1, allQuestions.size)
 
-        gameQuestions = allQuestions.shuffled().take(totalRondas)
-        labelNumTotalRondas.text = totalRondas.toString()
 
         gameQuestions = allQuestions.shuffled().take(totalRondas)
         labelNumTotalRondas.text = totalRondas.toString()
