@@ -237,6 +237,8 @@ class GameMechanics(private val context: Context) {
             "ORANGE" -> R.color.orange
             "BROWN" -> R.color.brown
             "GREY" -> R.color.gray
+            "CYAN" -> R.color.cyan
+            "MAGENTA" -> R.color.magenta
             else -> R.color.gray
         }
     }

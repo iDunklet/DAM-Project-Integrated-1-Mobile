@@ -35,104 +35,6 @@
     "opciones_en": ["BLUE", "GREEN", "BROWN", "YELLOW", "RED"]
   },
   {
-    "id": 4,
-    "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número que corresponde a ocho.",
-    "respuesta_correcta_en": "EIGHT",
-    "opciones_en": ["TEN", "THREE", "NINE", "EIGHT", "FIVE"]
-  },
-  {
-    "id": 5,
-    "categoria": "NUMBER",
-    "enunciado_es": "¿Cuál es el doble de cinco?",
-    "respuesta_correcta_en": "TEN",
-    "opciones_en": ["FOUR", "EIGHT", "TEN", "ONE", "TWELVE"]
-  },
-  {
-    "id": 6,
-    "categoria": "NUMBER",
-    "enunciado_es": "Elige el número entre uno y tres.",
-    "respuesta_correcta_en": "TWO",
-    "opciones_en": ["FOUR", "SIX", "TWO", "SEVEN", "FIVE"]
-  },
-  {
-    "id": 12,
-    "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número de dedos en una mano.",
-    "respuesta_correcta_en": "FIVE",
-    "opciones_en": ["SIX", "FOUR", "THREE", "FIVE", "TEN"]
-  },
-  {
-    "id": 13,
-    "categoria": "NUMBER",
-    "enunciado_es": "Encuentra el número que le sigue al seis.",
-    "respuesta_correcta_en": "SEVEN",
-    "opciones_en": ["EIGHT", "SEVEN", "FIVE", "NINE", "TEN"]
-  },
-  {
-    "id": 14,
-    "categoria": "NUMBER",
-    "enunciado_es": "Elige el número par más pequeño.",
-    "respuesta_correcta_en": "TWO",
-    "opciones_en": ["ZERO", "ONE", "TWO", "THREE", "FOUR"]
-  },
-  {
-    "id": 15,
-    "categoria": "NUMBER",
-    "enunciado_es": "¿Cuántas docenas hay en doce?",
-    "respuesta_correcta_en": "ONE",
-    "opciones_en": ["ONE", "TWO", "TWELVE", "TEN", "ZERO"]
-  },
-  {
-    "id": 7,
-    "categoria": "SHAPE",
-    "enunciado_es": "Selecciona la forma de una rueda de coche.",
-    "respuesta_correcta_en": "CIRCLE",
-    "opciones_en": ["SQUARE", "TRIANGLE", "OVAL", "RHOMBUS", "CIRCLE"]
-  },
-  {
-    "id": 8,
-    "categoria": "SHAPE",
-    "enunciado_es": "¿Qué forma tiene la mayoría de los ladrillos?",
-    "respuesta_correcta_en": "RECTANGLE",
-    "opciones_en": ["STAR", "RECTANGLE", "SQUARE", "OVAL", "PENTAGON"]
-  },
-  {
-    "id": 9,
-    "categoria": "SHAPE",
-    "enunciado_es": "Elige la figura con cuatro lados iguales y cuatro ángulos rectos.",
-    "respuesta_correcta_en": "SQUARE",
-    "opciones_en": ["SQUARE", "TRIANGLE", "HEXAGON", "DIAMOND", "OVAL"]
-  },
-  {
-    "id": 16,
-    "categoria": "SHAPE",
-    "enunciado_es": "Selecciona la figura geométrica con tres lados.",
-    "respuesta_correcta_en": "TRIANGLE",
-    "opciones_en": ["PENTAGON", "SQUARE", "HEXAGON", "TRIANGLE", "STAR"]
-  },
-  {
-    "id": 17,
-    "categoria": "SHAPE",
-    "enunciado_es": "¿Qué forma tiene un huevo?",
-    "respuesta_correcta_en": "OVAL",
-    "opciones_en": ["RECTANGLE", "CIRCLE", "OVAL", "DIAMOND", "PENTAGON"]
-  },
-  {
-    "id": 18,
-    "categoria": "SHAPE",
-    "enunciado_es": "Figura con seis lados iguales.",
-    "respuesta_correcta_en": "HEXAGON",
-    "opciones_en": ["PENTAGON", "OCTAGON", "TRIANGLE", "HEXAGON", "SQUARE"]
-  },
-  {
-    "id": 19,
-    "categoria": "SHAPE",
-    "enunciado_es": "Forma común para señales de alto (stop).",
-    "respuesta_correcta_en": "OCTAGON",
-    "opciones_en": ["SQUARE", "DIAMOND", "HEXAGON", "OCTAGON", "CIRCLE"]
-  },
-  {
     "id": 21,
     "categoria": "COLOR",
     "enunciado_es": "Selecciona el color de una naranja.",
@@ -204,11 +106,25 @@
   },
 
   {
-    "id": 31,
+    "id": 4,
     "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número que corresponde a cuatro.",
-    "respuesta_correcta_en": "FOUR",
-    "opciones_en": ["TWO", "FIVE", "FOUR", "ONE", "SIX"]
+    "enunciado_es": "Selecciona el número que corresponde a ocho.",
+    "respuesta_correcta_en": "EIGHT",
+    "opciones_en": ["TEN", "THREE", "NINE", "EIGHT", "FIVE"]
+  },
+  {
+    "id": 6,
+    "categoria": "NUMBER",
+    "enunciado_es": "Elige el número entre uno y tres.",
+    "respuesta_correcta_en": "TWO",
+    "opciones_en": ["FOUR", "SIX", "TWO", "SEVEN", "FIVE"]
+  },
+  {
+    "id": 12,
+    "categoria": "NUMBER",
+    "enunciado_es": "Selecciona el número de dedos en una mano.",
+    "respuesta_correcta_en": "FIVE",
+    "opciones_en": ["SIX", "FOUR", "THREE", "FIVE", "TEN"]
   },
   {
     "id": 32,
@@ -232,48 +148,48 @@
     "opciones_en": ["THREE", "FOUR", "ONE", "TWO", "FIVE"]
   },
   {
-    "id": 35,
-    "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número más pequeño.",
-    "respuesta_correcta_en": "ONE",
-    "opciones_en": ["FIVE", "TWO", "FOUR", "ONE", "THREE"]
-  },
-  {
-    "id": 36,
-    "categoria": "NUMBER",
-    "enunciado_es": "Elige el número después del tres.",
-    "respuesta_correcta_en": "FOUR",
-    "opciones_en": ["TWO", "FIVE", "ONE", "FOUR", "THREE"]
-  },
-  {
-    "id": 37,
-    "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número antes del cinco.",
-    "respuesta_correcta_en": "FOUR",
-    "opciones_en": ["ONE", "FOUR", "SEVEN", "TEN", "THREE"]
-  },
-  {
     "id": 38,
     "categoria": "NUMBER",
     "enunciado_es": "¿Cuántos dedos tiene una mano?",
     "respuesta_correcta_en": "FIVE",
     "opciones_en": ["THREE", "FIVE", "TWO", "ONE", "SIX"]
   },
-  {
-    "id": 39,
-    "categoria": "NUMBER",
-    "enunciado_es": "Elige el número entre cuatro y seis.",
-    "respuesta_correcta_en": "FIVE",
-    "opciones_en": ["THREE", "FIVE", "TWO", "SEVEN", "EIGHT"]
-  },
-  {
-    "id": 40,
-    "categoria": "NUMBER",
-    "enunciado_es": "Selecciona el número mayor.",
-    "respuesta_correcta_en": "TEN",
-    "opciones_en": ["TWO", "FIVE", "TEN", "FOUR", "ONE"]
-  },
 
+  {
+    "id": 7,
+    "categoria": "SHAPE",
+    "enunciado_es": "Selecciona la forma de una rueda de coche.",
+    "respuesta_correcta_en": "CIRCLE",
+    "opciones_en": ["SQUARE", "TRIANGLE", "OVAL", "RHOMBUS", "CIRCLE"]
+  },
+  {
+    "id": 8,
+    "categoria": "SHAPE",
+    "enunciado_es": "¿Qué forma tiene la mayoría de los ladrillos?",
+    "respuesta_correcta_en": "RECTANGLE",
+    "opciones_en": ["STAR", "RECTANGLE", "SQUARE", "OVAL", "PENTAGON"]
+  },
+  {
+    "id": 9,
+    "categoria": "SHAPE",
+    "enunciado_es": "Elige la figura con cuatro lados iguales y cuatro ángulos rectos.",
+    "respuesta_correcta_en": "SQUARE",
+    "opciones_en": ["SQUARE", "TRIANGLE", "HEXAGON", "DIAMOND", "OVAL"]
+  },
+  {
+    "id": 16,
+    "categoria": "SHAPE",
+    "enunciado_es": "Selecciona la figura geométrica con tres lados.",
+    "respuesta_correcta_en": "TRIANGLE",
+    "opciones_en": ["PENTAGON", "SQUARE", "HEXAGON", "TRIANGLE", "STAR"]
+  },
+  {
+    "id": 17,
+    "categoria": "SHAPE",
+    "enunciado_es": "¿Qué forma tiene un huevo?",
+    "respuesta_correcta_en": "OVAL",
+    "opciones_en": ["RECTANGLE", "CIRCLE", "OVAL", "DIAMOND", "PENTAGON"]
+  },
   {
     "id": 41,
     "categoria": "SHAPE",
@@ -296,20 +212,6 @@
     "opciones_en": ["CIRCLE", "STAR", "RECTANGLE", "OVAL", "HEXAGON"]
   },
   {
-    "id": 44,
-    "categoria": "SHAPE",
-    "enunciado_es": "Elige la figura que parece una caja.",
-    "respuesta_correcta_en": "CUBE",
-    "opciones_en": ["CUBE", "OVAL", "CIRCLE", "STAR", "TRIANGLE"]
-  },
-  {
-    "id": 45,
-    "categoria": "SHAPE",
-    "enunciado_es": "Selecciona la figura con cinco lados.",
-    "respuesta_correcta_en": "PENTAGON",
-    "opciones_en": ["HEXAGON", "PENTAGON", "SQUARE", "TRIANGLE", "CIRCLE"]
-  },
-  {
     "id": 46,
     "categoria": "SHAPE",
     "enunciado_es": "¿Qué forma tiene un huevo?",
@@ -324,24 +226,10 @@
     "opciones_en": ["SQUARE", "CIRCLE", "TRIANGLE", "STAR", "OVAL"]
   },
   {
-    "id": 48,
-    "categoria": "SHAPE",
-    "enunciado_es": "¿Qué figura tiene ocho lados?",
-    "respuesta_correcta_en": "OCTAGON",
-    "opciones_en": ["HEXAGON", "CIRCLE", "OCTAGON", "TRIANGLE", "SQUARE"]
-  },
-  {
     "id": 49,
     "categoria": "SHAPE",
     "enunciado_es": "Selecciona la figura que parece una estrella.",
     "respuesta_correcta_en": "STAR",
     "opciones_en": ["SQUARE", "STAR", "CIRCLE", "TRIANGLE", "RECTANGLE"]
-  },
-  {
-    "id": 50,
-    "categoria": "SHAPE",
-    "enunciado_es": "Elige la figura con seis lados.",
-    "respuesta_correcta_en": "HEXAGON",
-    "opciones_en": ["HEXAGON", "CIRCLE", "OVAL", "SQUARE", "TRIANGLE"]
   }
 ]
