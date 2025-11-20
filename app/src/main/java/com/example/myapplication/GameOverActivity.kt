@@ -49,9 +49,7 @@ class GameOverActivity : AppCompatActivity() {
             partida.fechaHoraFin,
             partida.gameTime
         )
-        jugador.partidas.add(partidaCompletada)
-        val jugadorActual = Jugador(jugador.nombre, jugador.edad, jugador.partidas)
-        jugadores.add(jugadorActual)
+        agregarPartida(jugador.nombre, jugador.edad, partidaCompletada)
         FilesManager.saveFile(this, jugadores)
 
         btnRePlay.setOnClickListener {

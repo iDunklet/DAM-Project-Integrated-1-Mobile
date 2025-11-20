@@ -34,11 +34,11 @@ class RegisterActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        FilesManager.readFile(this)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.register_activity)
 
+        jugadores = FilesManager.readFile(this)
         mediaPlayer = MediaPlayer.create(this, R.raw.school)
         mediaPlayer.start()
 
