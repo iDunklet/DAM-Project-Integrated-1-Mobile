@@ -18,12 +18,12 @@ class FilesManager {
             return jugadors
         }
 
-        fun saveFile(context: Context, jugadors: List<Jugador>)
+        fun saveFile(context: Context, jugadores: List<Jugador>)
         {
             val jsonFilePath = context.filesDir.toString() + "/json/colorsGame.json"
             val jsonFile = FileWriter(jsonFilePath)
             val gson = Gson()
-            val jsonElement = gson.toJson(jugadors)
+            val jsonElement = gson.toJson(jugadores)
             jsonFile.write(jsonElement)
             jsonFile.close()
         }
