@@ -166,7 +166,6 @@ class GameActivity_2 : AppCompatActivity() {
 
         val intent = Intent(this, GameOverActivity::class.java)
         intent.putExtra("JUGADOR", jugador)
-        intent.putExtra("PARTIDA", partida)
         startActivity(intent)
 
         btnNextRound.text = "FINALIZAR"
