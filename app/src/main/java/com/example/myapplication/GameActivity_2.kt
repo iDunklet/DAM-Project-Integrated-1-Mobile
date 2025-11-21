@@ -45,6 +45,7 @@ class GameActivity_2 : AppCompatActivity() {
 
         // Inicializar views
         labelCuentaAtras = findViewById(R.id.labelCuentaAtras)
+        labelCuentaAtras.visibility = View.INVISIBLE
         labelTextoPregunta = findViewById(R.id.labelTextoPregunta1)
         labelNumRonda = findViewById(R.id.labelNumRonda)
         labelNumTotalRondas = findViewById(R.id.labelNumTotalRondas)
