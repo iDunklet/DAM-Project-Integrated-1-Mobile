@@ -38,7 +38,7 @@ class GameOverActivity : AppCompatActivity() {
         val mins = partida.gameTime ?: 0
         val diffMillis = partida.fechaHoraFin!!.time - partida.fechaHoraInicio.time
         val secs = ((diffMillis / 1000) % 60).toInt()
-        partida.gameTime = secs
+        partida.gameTime = (diffMillis / 1000).toInt()
 
         tvTiempo.text = "${mins}m ${secs}s"
         val partidaCompletada = UserGameData(
